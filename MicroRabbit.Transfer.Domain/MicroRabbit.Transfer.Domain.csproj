@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Folder Include="CommandHandlers\" />
+		<Folder Include="Commands\" />
+		<Folder Include="EventHandlers\Contabilidad\" />
+		<Folder Include="EventHandlers\CuentasPorPagar\" />
+		<Folder Include="EventHandlers\Parametros\" />
+		<Folder Include="EventHandlers\PosPuntoVenta\" />
+		<Folder Include="EventHandlers\Ventas\" />
+		<Folder Include="Events\Contabilidad\" />
+		<Folder Include="Events\CuentasPorPagar\" />
+		<Folder Include="Events\Parametros\" />
+		<Folder Include="Events\PosPuntoVenta\" />
+		<Folder Include="Events\Ventas\" />
+		<Folder Include="Interfaces\Contabilidad\" />
+		<Folder Include="Interfaces\CuentasPorPagar\" />
+		<Folder Include="Interfaces\Parametros\" />
+		<Folder Include="Interfaces\PosPuntoVenta\" />
+		<Folder Include="Interfaces\Ventas\" />
+		<Folder Include="Models\Contabilidad\" />
+		<Folder Include="Models\CuentasPorCobrar\" />
+		<Folder Include="Models\CuentasPorPagar\" />
+		<Folder Include="Models\Parametros\" />
+		<Folder Include="Models\PosPuntoVenta\" />
+		<Folder Include="Models\Ventas\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\MicroRabbit.Domain.Core\MicroRabbit.Domain.Core.csproj" />
+	</ItemGroup>
+
+</Project>
