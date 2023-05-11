@@ -1,12 +1,15 @@
 using MediatR;
 using MicroRabbit.Banking.Application.Interfaces;
 using MicroRabbit.Banking.Application.Interfaces.CuentasPorCobrar;
+using MicroRabbit.Banking.Application.Interfaces.Inventario;
 using MicroRabbit.Banking.Application.Services.CuentasPorCobrar;
 using MicroRabbit.Banking.Application.Services.Inventario;
 using MicroRabbit.Banking.Domain.CommandHandlers;
 using MicroRabbit.Banking.Domain.CommandHandlers.CuentasPorCobrar;
+using MicroRabbit.Banking.Domain.CommandHandlers.Inventario;
 using MicroRabbit.Banking.Domain.Commands;
 using MicroRabbit.Banking.Domain.Commands.CuentasPorCobrar.Cliente;
+using MicroRabbit.Banking.Domain.Commands.Inventario.TransferenciaBodega;
 using MicroRabbit.Infra.Bus;
 using MicroRabbit.Infra.IoC;
 
@@ -32,9 +35,11 @@ builder.Services.RegisterServices(builder.Configuration);
 
 builder.Services.AddTransient<INivel1Services, Nivel1Services>();
 builder.Services.AddTransient<IClienteServices, ClienteServices>();
+builder.Services.AddTransient<ITransferenciaBodegaServices, TransferenciaBodegaServices>();
 
 builder.Services.AddTransient<IRequestHandler<CreateNivel1Command, bool>, Nivel1CommandHandler>();
 builder.Services.AddTransient<IRequestHandler<CreateClienteCommand, bool>, ClienteCommanHandler>();
+builder.Services.AddTransient<IRequestHandler<CreateTransferenciaBodegaCabCommand, bool>, TransferenciaBodegaCabCommandHandler>();
 
 
 
