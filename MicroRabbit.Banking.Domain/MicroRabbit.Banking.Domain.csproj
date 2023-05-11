@@ -26,7 +26,6 @@
     <Folder Include="Interfaces\" />
     <Folder Include="Models\Contabilidad\" />
     <Folder Include="Models\CuentasPorPagar\" />
-    <Folder Include="Models\Inventario\" />
     <Folder Include="Models\Parametros\" />
     <Folder Include="Models\PosPuntoVenta\" />
     <Folder Include="Models\Ventas\" />
