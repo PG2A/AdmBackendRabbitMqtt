@@ -24,6 +24,7 @@ namespace MicroRabbit.Transfer.Domain.Events.CuentasPorCobrar
         public string Parroquia { get; set; }
         public string Sector { get; set; }
         public string Zona { get; set; }
+        public string Estado_Civil { get; set; }
         public string Categoria { get; set; }
         public string Tipo_Cliente { get; set; }
         public string Tipo_Negocio { get; set; }
@@ -55,7 +56,7 @@ namespace MicroRabbit.Transfer.Domain.Events.CuentasPorCobrar
         public bool? PrecioAlCosto { get; set; }
         public float? PorcentajeIncremento { get; set; }
 
-        public ClienteCreateEvent(string codigo, string codigo_Cliente, int sucursal, string razon_Social, string negocio, string representante, DateTime fecha_Nacimiento, string tipodoc, string ruc, string direccion, string referencia, string celular, string telefono, int tipo_Contribuyente, string correo, string provincia, string canton, string parroquia, string sector, string zona, string categoria, string tipo_Cliente, string tipo_Negocio, string medio_Pago, string ruta_Entrega, DateTime fecha_Ingreso, DateTime fecha_Ultimacompra, bool dvlu, bool dvma, bool dvmi, bool dvju, bool dvvi, bool dvsa, bool dvdo, string frecuencia, int orden, int vendedor, int vendedor_Aux, int dias_Credito, bool credito, float cupo, float extra_Cupo, bool estado, string clavefe, string sexo, bool relacionado, string maquina, int usuario, bool? precioAlCosto, float? porcentajeIncremento)
+        public ClienteCreateEvent(string codigo, string codigo_Cliente, int sucursal, string razon_Social, string negocio, string representante, DateTime fecha_Nacimiento, string tipodoc, string ruc, string direccion, string referencia, string celular, string telefono, int tipo_Contribuyente, string correo, string provincia, string canton, string parroquia, string sector, string zona, string categoria, string tipo_Cliente, string tipo_Negocio, string medio_Pago, string ruta_Entrega, DateTime fecha_Ingreso, DateTime fecha_Ultimacompra, bool dvlu, bool dvma, bool dvmi, bool dvju, bool dvvi, bool dvsa, bool dvdo, string frecuencia, int orden, int vendedor, int vendedor_Aux, int dias_Credito, bool credito, float cupo, float extra_Cupo, bool estado, string clavefe, string sexo, bool relacionado, string maquina, int usuario, bool? precioAlCosto, float? porcentajeIncremento, string estado_Civil)
         {
             Codigo = codigo;
             Codigo_Cliente = codigo_Cliente;
@@ -107,6 +108,7 @@ namespace MicroRabbit.Transfer.Domain.Events.CuentasPorCobrar
             Usuario = usuario;
             PrecioAlCosto = precioAlCosto;
             PorcentajeIncremento = porcentajeIncremento;
+            Estado_Civil = estado_Civil;
         }
     }
 }
