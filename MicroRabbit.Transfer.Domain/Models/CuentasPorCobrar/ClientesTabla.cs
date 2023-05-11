@@ -10,7 +10,7 @@ namespace MicroRabbit.Transfer.Domain.Models.CuentasPorCobrar
         public int Sucursal { get; set; }
         public string Razon_Social { get; set; }
         public string Negocio { get; set; }
-        public string Representante { get; set; }
+        public string Representate { get; set; }
         public DateTime Fecha_Nacimiento { get; set; }
         public string Tipodoc { get; set; }
         public string Ruc { get; set; } 
@@ -31,6 +31,7 @@ namespace MicroRabbit.Transfer.Domain.Models.CuentasPorCobrar
         public string Medio_Pago { get; set; }
         public string Ruta_Entrega { get; set; }
         public DateTime Fecha_Ingreso { get; set; }
+        public string Estado_Civil { get; set; }
         public DateTime Fecha_Ultimacompra { get; set; }
         public bool Dvlu { get; set; }
         public bool Dvma { get; set; }

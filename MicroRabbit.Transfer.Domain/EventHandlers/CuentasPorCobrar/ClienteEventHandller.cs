@@ -3,11 +3,6 @@ using MicroRabbit.Domain.Core.Events;
 using MicroRabbit.Transfer.Domain.Events.CuentasPorCobrar;
 using MicroRabbit.Transfer.Domain.Interfaces.CuentasPorCobrar;
 using MicroRabbit.Transfer.Domain.Models.CuentasPorCobrar;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MicroRabbit.Transfer.Domain.EventHandlers.CuentasPorCobrar
 {
@@ -29,7 +24,7 @@ namespace MicroRabbit.Transfer.Domain.EventHandlers.CuentasPorCobrar
                 Sucursal = @event.Sucursal,
                 Razon_Social = @event.Razon_Social,
                 Negocio = @event.Negocio,
-                Representante = @event.Representante,
+                Representate = @event.Representante,
                 Fecha_Nacimiento = @event.Fecha_Nacimiento,
                 Tipodoc = @event.Tipodoc,
                 Ruc = @event.Ruc,
@@ -38,6 +33,7 @@ namespace MicroRabbit.Transfer.Domain.EventHandlers.CuentasPorCobrar
                 Celular = @event.Celular,
                 Telefono = @event.Telefono,
                 Tipo_Contribuyente = @event.Tipo_Contribuyente,
+                Estado_Civil = @event.Estado_Civil,
                 Correo = @event.Correo,
                 Provincia = @event.Provincia,
                 Canton = @event.Canton,
