@@ -14,13 +14,15 @@ namespace MicroRabbit.Transfer.Data.Context
         public DbSet<ClientesTabla> CXC_CLIENTE { get; set; }
         public DbSet<ProductosTabla> INV_PRODUCTO { get; set; }
         public DbSet<Nivel2Tabla> INV_NIVEL_2 { get; set; }
-        public DbSet<Nivel3Tabla> INV_NIVEL_3 { get; set;}
+        public DbSet<Nivel3Tabla> INV_NIVEL_3 { get; set; }
+        public DbSet<CamionTabla> INV_CAMION { get; set; }
+        public DbSet<ChoferTabla> INV_CHOFER { get; set; }
 
 
-            //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-            //{
-            //    optionsBuilder.UseSqlServer("Data Source=192.168.0.70;Initial Catalog=BDADMEP;user id=BIROBID;password=IROBID20");
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseSqlServer("Data Source=192.168.0.70;Initial Catalog=BDADMEP;user id=BIROBID;password=IROBID20");
 
         //}
-        }
+    }
 }
