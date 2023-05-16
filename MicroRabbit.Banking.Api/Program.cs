@@ -1,14 +1,18 @@
 using MediatR;
 using MicroRabbit.Banking.Application.Interfaces;
 using MicroRabbit.Banking.Application.Interfaces.CuentasPorCobrar;
+using MicroRabbit.Banking.Application.Interfaces.CuentasPorPagar;
 using MicroRabbit.Banking.Application.Interfaces.Inventario;
 using MicroRabbit.Banking.Application.Services.CuentasPorCobrar;
+using MicroRabbit.Banking.Application.Services.CuentasPorPagar;
 using MicroRabbit.Banking.Application.Services.Inventario;
 using MicroRabbit.Banking.Domain.CommandHandlers;
 using MicroRabbit.Banking.Domain.CommandHandlers.CuentasPorCobrar;
+using MicroRabbit.Banking.Domain.CommandHandlers.CuentasPorPagar;
 using MicroRabbit.Banking.Domain.CommandHandlers.Inventario;
 using MicroRabbit.Banking.Domain.Commands;
 using MicroRabbit.Banking.Domain.Commands.CuentasPorCobrar.Cliente;
+using MicroRabbit.Banking.Domain.Commands.CuentasPorPagar.Proveedor;
 using MicroRabbit.Banking.Domain.Commands.Inventario.Camion;
 using MicroRabbit.Banking.Domain.Commands.Inventario.Chofer;
 using MicroRabbit.Banking.Domain.Commands.Inventario.Nivel2;
@@ -46,6 +50,7 @@ builder.Services.AddTransient<INivel2Services, Nivel2Services>();
 builder.Services.AddTransient<INivel3Services, NIvel3Services>();
 builder.Services.AddTransient<ICamionServices, CamionServices>();
 builder.Services.AddTransient<IChoferServices, ChoferServices>();
+builder.Services.AddTransient<IProveedorServices, ProveedorServices>();
 
 
 
@@ -57,6 +62,7 @@ builder.Services.AddTransient<IRequestHandler<CreateNivel2Command, bool>, Nivel2
 builder.Services.AddTransient<IRequestHandler<CreateNivel3Command, bool>, Nivel3CommandHandler>();
 builder.Services.AddTransient<IRequestHandler<CreateCamionCommand, bool>, CamionCommandHandler>();
 builder.Services.AddTransient<IRequestHandler<CreateChoferCommand, bool>, ChoferCommandHandler>();
+builder.Services.AddTransient<IRequestHandler<CreateProveedorCommand, bool>, ProveedorCommandHandler>();
 
 
 
