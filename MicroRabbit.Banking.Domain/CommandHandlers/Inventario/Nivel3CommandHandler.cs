@@ -14,8 +14,7 @@ namespace MicroRabbit.Banking.Domain.CommandHandlers.Inventario
 
         public Task<bool> Handle(CreateNivel3Command request, CancellationToken cancellationToken)
         {
-            _eventBus.Publish(request.Codigo, request.Nombre, request.Estado, request.Nivel1, request.Nivel2, request.Fecha_ing, request.Maquina, request.Usuario, request.Sucursal
-                
+            _eventBus.Publish(request.Codigo, request.Nombre, request.Estado, request.Nivel1, request.Nivel2, request.Fecha_ing, request.Maquina, request.Usuario, request.Sucursal         
                 );
             return Task.FromResult(true);
         }
