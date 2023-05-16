@@ -1,8 +1,10 @@
 
 using MicroRabbit.Banking.Application.Interfaces;
 using MicroRabbit.Banking.Application.Interfaces.CuentasPorCobrar;
+using MicroRabbit.Banking.Application.Interfaces.CuentasPorPagar;
 using MicroRabbit.Banking.Application.Interfaces.Inventario;
 using MicroRabbit.Banking.Application.Services.CuentasPorCobrar;
+using MicroRabbit.Banking.Application.Services.CuentasPorPagar;
 using MicroRabbit.Banking.Application.Services.Inventario;
 using MicroRabbit.Domain.Core.Bus;
 using MicroRabbit.Infra.Bus;
@@ -10,13 +12,17 @@ using MicroRabbit.Infra.IoC;
 using MicroRabbit.Transfer.Data.Context;
 using MicroRabbit.Transfer.Data.Repository;
 using MicroRabbit.Transfer.Data.Repository.CuentasPorCobrar;
+using MicroRabbit.Transfer.Data.Repository.CuentasPorPagar;
 using MicroRabbit.Transfer.Data.Repository.Inventario;
 using MicroRabbit.Transfer.Domain.EventHandlers.CuentasPorCobrar;
+using MicroRabbit.Transfer.Domain.EventHandlers.CuentasPorPagar;
 using MicroRabbit.Transfer.Domain.EventHandlers.Inventario;
 using MicroRabbit.Transfer.Domain.Events;
 using MicroRabbit.Transfer.Domain.Events.CuentasPorCobrar;
+using MicroRabbit.Transfer.Domain.Events.CuentasPorPagar;
 using MicroRabbit.Transfer.Domain.Events.Inventario;
 using MicroRabbit.Transfer.Domain.Interfaces.CuentasPorCobrar;
+using MicroRabbit.Transfer.Domain.Interfaces.CuentasPorPagar;
 using MicroRabbit.Transfer.Domain.Interfaces.Inventario;
 using Microsoft.EntityFrameworkCore;
 
@@ -47,16 +53,19 @@ builder.Services.AddTransient<IClienteServices, ClienteServices>();
 builder.Services.AddTransient<IProductoServices, ProductoServices>();
 builder.Services.AddTransient<ICamionServices, CamionServices>();
 builder.Services.AddTransient<IChoferServices, ChoferServices>();
+builder.Services.AddTransient<IProveedorServices, ProveedorServices>();
 builder.Services.AddTransient<IEventHandler<Nivel1CreateEvent>, Nivel1EventHandler>();
 builder.Services.AddTransient<IEventHandler<ProductoCreateEvent>, ProductoEventHandler>();
 builder.Services.AddTransient<INivelRepository, Nivel1Repository>();
 builder.Services.AddTransient<IEventHandler<ChoferCreateEvent>, ChoferEventHandler>();
 builder.Services.AddTransient<IEventHandler<CamionCreateEvent>, CamionEventHandler>();
+builder.Services.AddTransient<IEventHandler<ProveedorCreateEvent>, ProveedorEventHandler>();
 builder.Services.AddTransient<Nivel1DbContext>();
 builder.Services.AddTransient<IClienteRepository, ClienteRepository>();
 builder.Services.AddTransient<IProductoRepository, ProductoRepository>();
 builder.Services.AddTransient<IChoferRepository, ChoferRepository>();
 builder.Services.AddTransient<ICamionRepository, CamionRepository>();
+builder.Services.AddTransient<IProveedorRepository, ProveedorRepository>();
 builder.Services.AddTransient<TablasContext>();
 
 
@@ -70,6 +79,7 @@ builder.Services.AddTransient<ClienteEventHandller>();
 builder.Services.AddTransient<ProductoEventHandler>();
 builder.Services.AddTransient<CamionEventHandler>();
 builder.Services.AddTransient<ChoferEventHandler>();
+builder.Services.AddTransient<ProveedorEventHandler>();
 
 
 
@@ -89,6 +99,7 @@ eventBus.Subscribe<ClienteCreateEvent, ClienteEventHandller>();
 eventBus.Subscribe<ProductoCreateEvent, ProductoEventHandler>();
 eventBus.Subscribe<CamionCreateEvent, CamionEventHandler>();
 eventBus.Subscribe<ChoferCreateEvent, ChoferEventHandler>();
+eventBus.Subscribe<ProveedorCreateEvent, ProveedorEventHandler>();
 
 
 
