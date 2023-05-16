@@ -1,6 +1,7 @@
 
 using MicroRabbit.Banking.Application.Interfaces;
 using MicroRabbit.Banking.Application.Interfaces.CuentasPorCobrar;
+using MicroRabbit.Banking.Application.Interfaces.Inventario;
 using MicroRabbit.Banking.Application.Services.CuentasPorCobrar;
 using MicroRabbit.Banking.Application.Services.Inventario;
 using MicroRabbit.Domain.Core.Bus;
@@ -9,10 +10,12 @@ using MicroRabbit.Infra.IoC;
 using MicroRabbit.Transfer.Data.Context;
 using MicroRabbit.Transfer.Data.Repository;
 using MicroRabbit.Transfer.Data.Repository.CuentasPorCobrar;
+using MicroRabbit.Transfer.Data.Repository.Inventario;
 using MicroRabbit.Transfer.Domain.EventHandlers.CuentasPorCobrar;
 using MicroRabbit.Transfer.Domain.EventHandlers.Inventario;
 using MicroRabbit.Transfer.Domain.Events;
 using MicroRabbit.Transfer.Domain.Events.CuentasPorCobrar;
+using MicroRabbit.Transfer.Domain.Events.Inventario;
 using MicroRabbit.Transfer.Domain.Interfaces.CuentasPorCobrar;
 using MicroRabbit.Transfer.Domain.Interfaces.Inventario;
 using Microsoft.EntityFrameworkCore;
@@ -41,10 +44,13 @@ builder.Services.RegisterServices(builder.Configuration);
 
 builder.Services.AddTransient<INivel1Services, Nivel1Services>();
 builder.Services.AddTransient<IClienteServices, ClienteServices>();
+builder.Services.AddTransient<IProductoServices, ProductoServices>();
 builder.Services.AddTransient<IEventHandler<Nivel1CreateEvent>, Nivel1EventHandler>();
+builder.Services.AddTransient<IEventHandler<ProductoCreateEvent>, ProductoEventHandler>();
 builder.Services.AddTransient<INivelRepository, Nivel1Repository>();
 builder.Services.AddTransient<Nivel1DbContext>();
 builder.Services.AddTransient<IClienteRepository, ClienteRepository>();
+builder.Services.AddTransient<IProductoRepository, ProductoRepository>();
 builder.Services.AddTransient<TablasContext>();
 
 
@@ -55,6 +61,7 @@ builder.Services.AddTransient<TablasContext>();
 
 builder.Services.AddTransient<Nivel1EventHandler>();
 builder.Services.AddTransient<ClienteEventHandller>();
+builder.Services.AddTransient<ProductoEventHandler>();
 
 
 
@@ -71,6 +78,7 @@ var app = builder.Build();
 var eventBus = app.Services.GetRequiredService<IEventBus>();
 eventBus.Subscribe<Nivel1CreateEvent, Nivel1EventHandler>();
 eventBus.Subscribe<ClienteCreateEvent, ClienteEventHandller>();
+eventBus.Subscribe<ProductoCreateEvent, ProductoEventHandler>();
 
 
 

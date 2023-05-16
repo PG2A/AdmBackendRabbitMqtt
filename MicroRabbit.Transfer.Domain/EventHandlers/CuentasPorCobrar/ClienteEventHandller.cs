@@ -1,5 +1,4 @@
 ﻿using MicroRabbit.Domain.Core.Bus;
-using MicroRabbit.Domain.Core.Events;
 using MicroRabbit.Transfer.Domain.Events.CuentasPorCobrar;
 using MicroRabbit.Transfer.Domain.Interfaces.CuentasPorCobrar;
 using MicroRabbit.Transfer.Domain.Models.CuentasPorCobrar;
