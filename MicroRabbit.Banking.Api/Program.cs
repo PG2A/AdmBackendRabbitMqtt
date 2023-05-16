@@ -10,6 +10,7 @@ using MicroRabbit.Banking.Domain.CommandHandlers.Inventario;
 using MicroRabbit.Banking.Domain.Commands;
 using MicroRabbit.Banking.Domain.Commands.CuentasPorCobrar.Cliente;
 using MicroRabbit.Banking.Domain.Commands.Inventario.Camion;
+using MicroRabbit.Banking.Domain.Commands.Inventario.Chofer;
 using MicroRabbit.Banking.Domain.Commands.Inventario.Nivel2;
 using MicroRabbit.Banking.Domain.Commands.Inventario.Nivel3;
 using MicroRabbit.Banking.Domain.Commands.Inventario.Producto;
@@ -55,6 +56,7 @@ builder.Services.AddTransient<IRequestHandler<CreateProductoCommand, bool>, Prod
 builder.Services.AddTransient<IRequestHandler<CreateNivel2Command, bool>, Nivel2CommandHandler>();
 builder.Services.AddTransient<IRequestHandler<CreateNivel3Command, bool>, Nivel3CommandHandler>();
 builder.Services.AddTransient<IRequestHandler<CreateCamionCommand, bool>, CamionCommandHandler>();
+builder.Services.AddTransient<IRequestHandler<CreateChoferCommand, bool>, ChoferCommandHandler>();
 
 
 

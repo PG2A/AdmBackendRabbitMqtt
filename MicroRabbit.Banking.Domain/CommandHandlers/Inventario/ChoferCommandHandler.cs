@@ -3,11 +3,6 @@ using MicroRabbit.Banking.Domain.Commands;
 using MicroRabbit.Banking.Domain.Commands.Inventario.Chofer;
 using MicroRabbit.Banking.Domain.Events.Inventario;
 using MicroRabbit.Domain.Core.Bus;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MicroRabbit.Banking.Domain.CommandHandlers.Inventario
 {

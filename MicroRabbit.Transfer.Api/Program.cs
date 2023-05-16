@@ -68,6 +68,8 @@ builder.Services.AddTransient<TablasContext>();
 builder.Services.AddTransient<Nivel1EventHandler>();
 builder.Services.AddTransient<ClienteEventHandller>();
 builder.Services.AddTransient<ProductoEventHandler>();
+builder.Services.AddTransient<CamionEventHandler>();
+builder.Services.AddTransient<ChoferEventHandler>();
 
 
 
@@ -85,6 +87,8 @@ var eventBus = app.Services.GetRequiredService<IEventBus>();
 eventBus.Subscribe<Nivel1CreateEvent, Nivel1EventHandler>();
 eventBus.Subscribe<ClienteCreateEvent, ClienteEventHandller>();
 eventBus.Subscribe<ProductoCreateEvent, ProductoEventHandler>();
+eventBus.Subscribe<CamionCreateEvent, CamionEventHandler>();
+eventBus.Subscribe<ChoferCreateEvent, ChoferEventHandler>();
 
 
 
