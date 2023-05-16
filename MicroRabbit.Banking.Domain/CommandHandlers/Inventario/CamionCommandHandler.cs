@@ -1,4 +1,6 @@
-﻿using MicroRabbit.Banking.Domain.Commands.Inventario.Camion;
+﻿using MediatR;
+using MicroRabbit.Banking.Domain.Commands;
+using MicroRabbit.Banking.Domain.Commands.Inventario.Camion;
 using MicroRabbit.Banking.Domain.Commands.Inventario.Chofer;
 using MicroRabbit.Banking.Domain.Events.Inventario;
 using MicroRabbit.Domain.Core.Bus;
@@ -11,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace MicroRabbit.Banking.Domain.CommandHandlers.Inventario
 {
-    public class CamionCommandHandler
+    public class CamionCommandHandler : IRequestHandler<CreateCamionCommand, bool>
     {
         private readonly IEventBus _eventBus;
 

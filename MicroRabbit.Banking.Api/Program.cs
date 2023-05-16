@@ -9,6 +9,7 @@ using MicroRabbit.Banking.Domain.CommandHandlers.CuentasPorCobrar;
 using MicroRabbit.Banking.Domain.CommandHandlers.Inventario;
 using MicroRabbit.Banking.Domain.Commands;
 using MicroRabbit.Banking.Domain.Commands.CuentasPorCobrar.Cliente;
+using MicroRabbit.Banking.Domain.Commands.Inventario.Camion;
 using MicroRabbit.Banking.Domain.Commands.Inventario.Nivel2;
 using MicroRabbit.Banking.Domain.Commands.Inventario.Nivel3;
 using MicroRabbit.Banking.Domain.Commands.Inventario.Producto;
@@ -42,7 +43,8 @@ builder.Services.AddTransient<ITransferenciaBodegaServices, TransferenciaBodegaS
 builder.Services.AddTransient<IProductoServices, ProductoServices>();
 builder.Services.AddTransient<INivel2Services, Nivel2Services>();
 builder.Services.AddTransient<INivel3Services, NIvel3Services>();
-
+builder.Services.AddTransient<ICamionServices, CamionServices>();
+builder.Services.AddTransient<IChoferServices, ChoferServices>();
 
 
 
@@ -52,6 +54,7 @@ builder.Services.AddTransient<IRequestHandler<CreateTransferenciaBodegaCabComman
 builder.Services.AddTransient<IRequestHandler<CreateProductoCommand, bool>, ProductoCommandHandler>();
 builder.Services.AddTransient<IRequestHandler<CreateNivel2Command, bool>, Nivel2CommandHandler>();
 builder.Services.AddTransient<IRequestHandler<CreateNivel3Command, bool>, Nivel3CommandHandler>();
+builder.Services.AddTransient<IRequestHandler<CreateCamionCommand, bool>, CamionCommandHandler>();
 
 
 

@@ -45,12 +45,18 @@ builder.Services.RegisterServices(builder.Configuration);
 builder.Services.AddTransient<INivel1Services, Nivel1Services>();
 builder.Services.AddTransient<IClienteServices, ClienteServices>();
 builder.Services.AddTransient<IProductoServices, ProductoServices>();
+builder.Services.AddTransient<ICamionServices, CamionServices>();
+builder.Services.AddTransient<IChoferServices, ChoferServices>();
 builder.Services.AddTransient<IEventHandler<Nivel1CreateEvent>, Nivel1EventHandler>();
 builder.Services.AddTransient<IEventHandler<ProductoCreateEvent>, ProductoEventHandler>();
 builder.Services.AddTransient<INivelRepository, Nivel1Repository>();
+builder.Services.AddTransient<IEventHandler<ChoferCreateEvent>, ChoferEventHandler>();
+builder.Services.AddTransient<IEventHandler<CamionCreateEvent>, CamionEventHandler>();
 builder.Services.AddTransient<Nivel1DbContext>();
 builder.Services.AddTransient<IClienteRepository, ClienteRepository>();
 builder.Services.AddTransient<IProductoRepository, ProductoRepository>();
+builder.Services.AddTransient<IChoferRepository, ChoferRepository>();
+builder.Services.AddTransient<ICamionRepository, CamionRepository>();
 builder.Services.AddTransient<TablasContext>();
 
 
