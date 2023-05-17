@@ -7,22 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="CommandHandlers\Contabilidad\" />
-    <Folder Include="CommandHandlers\Parametros\" />
     <Folder Include="CommandHandlers\PosPuntoVenta\" />
     <Folder Include="CommandHandlers\Ventas\" />
-    <Folder Include="Commands\Contabilidad\" />
-    <Folder Include="Commands\Parametros\" />
     <Folder Include="Commands\PosPuntoVenta\" />
     <Folder Include="Commands\Ventas\" />
     <Folder Include="EventHandlers\" />
-    <Folder Include="Events\Contabilidad\" />
-    <Folder Include="Events\Parametros\" />
     <Folder Include="Events\PosPuntoVenta\" />
     <Folder Include="Events\Ventas\" />
     <Folder Include="Interfaces\" />
-    <Folder Include="Models\Contabilidad\" />
-    <Folder Include="Models\Parametros\" />
     <Folder Include="Models\PosPuntoVenta\" />
     <Folder Include="Models\Ventas\" />
   </ItemGroup>
