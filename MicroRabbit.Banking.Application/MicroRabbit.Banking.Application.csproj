@@ -11,18 +11,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\Contabilidad\" />
     <Folder Include="Interfaces\CuentasPorPagar\" />
     <Folder Include="Interfaces\PosPuntoVenta\" />
-    <Folder Include="Interfaces\Parametros\" />
     <Folder Include="Interfaces\Ventas\" />
-    <Folder Include="Models\Contabilidad\" />
-    <Folder Include="Models\Parametros\" />
     <Folder Include="Models\PosPuntoVenta\" />
     <Folder Include="Models\Ventas\" />
-    <Folder Include="Services\Contabilidad\" />
     <Folder Include="Services\CuentasPorCobrar\" />
-    <Folder Include="Services\Parametros\" />
     <Folder Include="Services\PosPuntoVenta\" />
     <Folder Include="Services\Ventas\" />
   </ItemGroup>

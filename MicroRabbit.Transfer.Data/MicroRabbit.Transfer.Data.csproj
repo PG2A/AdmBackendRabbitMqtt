@@ -25,9 +25,7 @@
 
 	<ItemGroup>
 	  <Folder Include="Migrations\" />
-	  <Folder Include="Repository\Contabilidad\" />
 	  <Folder Include="Repository\CuentasPorCobrar\" />
-	  <Folder Include="Repository\Parametros\" />
 	  <Folder Include="Repository\PosPuntoVenta\" />
 	  <Folder Include="Repository\Ventas\" />
 	</ItemGroup>

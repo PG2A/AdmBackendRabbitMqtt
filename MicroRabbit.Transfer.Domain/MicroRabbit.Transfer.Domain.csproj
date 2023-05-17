@@ -9,21 +9,13 @@
 	<ItemGroup>
 		<Folder Include="CommandHandlers\" />
 		<Folder Include="Commands\" />
-		<Folder Include="EventHandlers\Contabilidad\" />
-		<Folder Include="EventHandlers\Parametros\" />
 		<Folder Include="EventHandlers\PosPuntoVenta\" />
 		<Folder Include="EventHandlers\Ventas\" />
-		<Folder Include="Events\Contabilidad\" />
-		<Folder Include="Events\Parametros\" />
 		<Folder Include="Events\PosPuntoVenta\" />
 		<Folder Include="Events\Ventas\" />
-		<Folder Include="Interfaces\Contabilidad\" />
-		<Folder Include="Interfaces\Parametros\" />
 		<Folder Include="Interfaces\PosPuntoVenta\" />
 		<Folder Include="Interfaces\Ventas\" />
-		<Folder Include="Models\Contabilidad\" />
 		<Folder Include="Models\CuentasPorCobrar\" />
-		<Folder Include="Models\Parametros\" />
 		<Folder Include="Models\PosPuntoVenta\" />
 		<Folder Include="Models\Ventas\" />
 	</ItemGroup>
