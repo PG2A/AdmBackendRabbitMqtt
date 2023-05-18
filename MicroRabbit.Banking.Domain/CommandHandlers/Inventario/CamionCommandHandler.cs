@@ -25,7 +25,7 @@ namespace MicroRabbit.Banking.Domain.CommandHandlers.Inventario
         public Task<bool> Handle(CreateCamionCommand request, CancellationToken cancellationToken)
         {
             _eventBus.Publish(new CamionCreateEvent(request.Codigo, request.Nombre, request.Placa, request.Volumen, request.Anio, request.Peso, request.Chofer, request.Nombrechofer, request.Nombresucursal, request.Estado, 
-                request.Detalle, request.Fecha_Ingreso, request.Maquina, request.Usuario, request.Sucursal));
+                request.Detalle, request.Fecha_Ingreso, request.Maquina, request.Usuario, request.Sucursal, request.TipoPeticion));
             return Task.FromResult(true);
         }
     }

@@ -4,6 +4,8 @@ namespace MicroRabbit.Transfer.Domain.Interfaces.Contabilidad
 {
     public interface IBancoCiaRepository
     {
-        void GrabarTabla(BancoCiaTabla clienteTabla);
+        void GrabarTabla(BancoCiaTabla bancociaTabla); 
+        void EditarTabla(BancoCiaTabla bancociaTabla);
+        void EliminarTabla(BancoCiaTabla bancociaTabla);
     }
 }

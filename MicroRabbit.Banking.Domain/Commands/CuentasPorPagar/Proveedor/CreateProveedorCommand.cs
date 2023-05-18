@@ -8,7 +8,7 @@ namespace MicroRabbit.Banking.Domain.Commands.CuentasPorPagar.Proveedor
 {
     public class CreateProveedorCommand : ProveedorCommand
     {
-        public CreateProveedorCommand(int? codigo, string codigo_Proveedor, int sucursal, string nombre, string nombre_Comercial, string direccion, string telefono, string ruc, string correo, string correofactura, string contacto, char bien, string tipo, string categoria, string pais, string ciudad, int tipo_Contribuyente, int dias_Credito, int cnt_Gastos, string observacion, bool estado, int usuarioAprobacion, DateTime fechaAprobacion, int? usuarioAutorizacion, DateTime? fechaAutorizacion, string? rutaDocumentos, DateTime? fecha_Ingreso, string maquina, int usuario, int relacionado, string? archivo, string? nombreArchivo, string? nombre_Provincia, string? nombreCategoria, string? nombrePais, string? nombreContri, string? nombreDias, string? codigoUsuarioAutorizacion, string? nombreUsuarioAutorizacion)
+        public CreateProveedorCommand(int? codigo, string codigo_Proveedor, int sucursal, string nombre, string nombre_Comercial, string direccion, string telefono, string ruc, string correo, string correofactura, string contacto, char bien, string tipo, string categoria, string pais, string ciudad, int tipo_Contribuyente, int dias_Credito, int cnt_Gastos, string observacion, bool estado, int usuarioAprobacion, DateTime fechaAprobacion, int? usuarioAutorizacion, DateTime? fechaAutorizacion, string? rutaDocumentos, DateTime? fecha_Ingreso, string maquina, int usuario, int relacionado, string? archivo, string? nombreArchivo, string? nombre_Provincia, string? nombreCategoria, string? nombrePais, string? nombreContri, string? nombreDias, string? codigoUsuarioAutorizacion, string? nombreUsuarioAutorizacion, string tipopeticion)
         {
             Codigo = codigo;
             Codigo_Proveedor = codigo_Proveedor;
@@ -49,6 +49,7 @@ namespace MicroRabbit.Banking.Domain.Commands.CuentasPorPagar.Proveedor
             this.nombreDias = nombreDias;
             this.codigoUsuarioAutorizacion = codigoUsuarioAutorizacion;
             this.nombreUsuarioAutorizacion = nombreUsuarioAutorizacion;
+            TipoPeticion = tipopeticion;
         }
     }
 }

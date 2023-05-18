@@ -10,5 +10,7 @@ namespace MicroRabbit.Banking.Application.Interfaces.Inventario
     public interface IChoferServices
     {
         void Transfer(ChoferModel chofer);
+        void Editar(ChoferModel chofer);
+        void Eliminar(ChoferModel chofer);
     }
 }

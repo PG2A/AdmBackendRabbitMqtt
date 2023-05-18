@@ -21,6 +21,20 @@ namespace MicroRabbit.Banking.Application.Services.Inventario
             _eventBus = eventBus;
         }
 
+        public void Editar(CamionModel camion)
+        {
+            var createCamionCommand = new CreateCamionCommand(camion.Codigo, camion.Nombre, camion.Placa, camion.Volumen, camion.Anio, camion.Peso, camion.Chofer, camion.Nombrechofer, camion.Nombresucursal, camion.Estado,
+                camion.Detalle, camion.Fecha_Ingreso, camion.Maquina, camion.Usuario, camion.Sucursal);
+            _eventBus.SendCommand(createCamionCommand);
+        }
+
+        public void Eliminar(CamionModel camion)
+        {
+            var createCamionCommand = new CreateCamionCommand(camion.Codigo, camion.Nombre, camion.Placa, camion.Volumen, camion.Anio, camion.Peso, camion.Chofer, camion.Nombrechofer, camion.Nombresucursal, camion.Estado,
+                camion.Detalle, camion.Fecha_Ingreso, camion.Maquina, camion.Usuario, camion.Sucursal);
+            _eventBus.SendCommand(createCamionCommand);
+        }
+
         public void Transfer(CamionModel camion)
         {
             var createCamionCommand = new CreateCamionCommand(camion.Codigo, camion.Nombre, camion.Placa, camion.Volumen, camion.Anio, camion.Peso, camion.Chofer, camion.Nombrechofer, camion.Nombresucursal, camion.Estado,

@@ -21,8 +21,9 @@ namespace MicroRabbit.Transfer.Domain.Events.Inventario
         public string? Maquina { get; set; }
         public int Usuario { get; set; }
         public int Sucursal { get; set; }
+        public string TipoPeticion { get; set; }
 
-        public ChoferCreateEvent(int codigo, string nombre, string cedula, string direccion, string celular, string observacion, bool? estado, DateTime fecha_Ingreso, string? detalle, string? maquina, int usuario, int sucursal)
+        public ChoferCreateEvent(int codigo, string nombre, string cedula, string direccion, string celular, string observacion, bool? estado, DateTime fecha_Ingreso, string? detalle, string? maquina, int usuario, int sucursal, string tipopeticion)
         {
             Codigo = codigo;
             Nombre = nombre;
@@ -36,6 +37,7 @@ namespace MicroRabbit.Transfer.Domain.Events.Inventario
             Maquina = maquina;
             Usuario = usuario;
             Sucursal = sucursal;
+            TipoPeticion = tipopeticion;
         }
     }
 }

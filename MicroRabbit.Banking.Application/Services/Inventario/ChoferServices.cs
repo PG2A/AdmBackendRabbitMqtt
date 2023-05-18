@@ -21,6 +21,20 @@ namespace MicroRabbit.Banking.Application.Services.Inventario
             _eventBus = eventBus;
         }
 
+        public void Editar(ChoferModel chofer)
+        {
+            var createChoferCommand = new CreateChoferCommand(chofer.Codigo, chofer.Nombre, chofer.Cedula, chofer.Direccion, chofer.Celular,
+                chofer.Observacion, chofer.Estado, chofer.Fecha_Ingreso, chofer.Detalle, chofer.Maquina, chofer.Usuario, chofer.Sucursal);
+            _eventBus.SendCommand(createChoferCommand);
+        }
+
+        public void Eliminar(ChoferModel chofer)
+        {
+            var createChoferCommand = new CreateChoferCommand(chofer.Codigo, chofer.Nombre, chofer.Cedula, chofer.Direccion, chofer.Celular,
+                chofer.Observacion, chofer.Estado, chofer.Fecha_Ingreso, chofer.Detalle, chofer.Maquina, chofer.Usuario, chofer.Sucursal);
+            _eventBus.SendCommand(createChoferCommand);
+        }
+
         public void Transfer(ChoferModel chofer)
         {
             var createChoferCommand = new CreateChoferCommand(chofer.Codigo, chofer.Nombre, chofer.Cedula, chofer.Direccion, chofer.Celular,

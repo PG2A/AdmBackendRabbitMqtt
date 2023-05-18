@@ -10,5 +10,7 @@ namespace MicroRabbit.Transfer.Domain.Interfaces.CuentasPorPagar
     public interface IProveedorRepository
     {
         void GrabarTabla(ProveedorTabla proveedorTabla);
+        void EditarTabla(ProveedorTabla proveedorTabla);
+        void EliminarTabla(ProveedorTabla proveedorTabla);
     }
 }

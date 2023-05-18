@@ -16,11 +16,24 @@ namespace MicroRabbit.Banking.Api.Controllers.Parametros
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] PersonaModel cliente)
+        public IActionResult Post([FromBody] PersonaModel persona)
         {
 
-            _personaServices.Enviar(cliente);
-            return Ok(cliente);
+            _personaServices.Enviar(persona);
+            return Ok(persona);
+        }
+
+        [HttpPut("editar")]
+        public IActionResult Put([FromBody] PersonaModel persona)
+        {
+            _personaServices.Editar(persona);
+            return Ok(persona);
+        }
+        [HttpDelete("eliminar")]
+        public IActionResult Delete([FromBody] PersonaModel persona)
+        {
+            _personaServices.Eliminar(persona);
+            return Ok(persona);
         }
     }
 }

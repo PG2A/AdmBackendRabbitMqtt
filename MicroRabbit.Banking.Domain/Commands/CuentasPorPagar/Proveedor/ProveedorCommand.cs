@@ -48,5 +48,6 @@ namespace MicroRabbit.Banking.Domain.Commands.CuentasPorPagar.Proveedor
         public string? nombreDias { get; set; }
         public string? codigoUsuarioAutorizacion { get; set; }
         public string? nombreUsuarioAutorizacion { get; set; }
+        public string TipoPeticion { get; set; }
     }
 }

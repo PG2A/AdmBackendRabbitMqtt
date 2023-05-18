@@ -12,10 +12,19 @@ namespace MicroRabbit.Transfer.Data.Repository.Contabilidad
         {
             _tablasContext = tablasContext;
         }
-
         public void GrabarTabla(BancoCiaTabla bancociaTabla)
         {
             _tablasContext.Add(bancociaTabla);
+            _tablasContext.SaveChanges();
+        }
+        public void EditarTabla(BancoCiaTabla bancociaTabla)
+        {
+            _tablasContext.Update(bancociaTabla);
+            _tablasContext.SaveChanges();
+        }
+        public void EliminarTabla(BancoCiaTabla bancociaTabla)
+        {
+            _tablasContext.Remove(bancociaTabla);
             _tablasContext.SaveChanges();
         }
     }

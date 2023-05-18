@@ -22,22 +22,58 @@ namespace MicroRabbit.Transfer.Domain.EventHandlers.Inventario
 
         public Task Handle(ChoferCreateEvent @event)
         {
-            var grabar = new ChoferTabla
+            if (@event.TipoPeticion == "POST")
             {
-                Codigo = @event.Codigo,
-                Nombre = @event.Nombre,
-                Cedula = @event.Cedula,
-                Direccion = @event.Direccion,
-                Celular = @event.Celular,
-                Observacion = @event.Observacion,
-                Estado = @event.Estado,
-                Fecha_Ingreso = @event.Fecha_Ingreso,
-                Maquina = @event.Maquina,
-                Usuario = @event.Usuario,
-
-            };
-            _choferRepository.Grabar(grabar);
-            return Task.CompletedTask;
+                var grabar = new ChoferTabla
+                {
+                    Codigo = @event.Codigo,
+                    Nombre = @event.Nombre,
+                    Cedula = @event.Cedula,
+                    Direccion = @event.Direccion,
+                    Celular = @event.Celular,
+                    Observacion = @event.Observacion,
+                    Estado = @event.Estado,
+                    Fecha_Ingreso = @event.Fecha_Ingreso,
+                    Maquina = @event.Maquina,
+                    Usuario = @event.Usuario,
+                };
+                _choferRepository.Grabar(grabar);
+            }
+            else if (@event.TipoPeticion == "PUT")
+            {
+                var editar = new ChoferTabla
+                {
+                    Codigo = @event.Codigo,
+                    Nombre = @event.Nombre,
+                    Cedula = @event.Cedula,
+                    Direccion = @event.Direccion,
+                    Celular = @event.Celular,
+                    Observacion = @event.Observacion,
+                    Estado = @event.Estado,
+                    Fecha_Ingreso = @event.Fecha_Ingreso,
+                    Maquina = @event.Maquina,
+                    Usuario = @event.Usuario,
+                };
+                _choferRepository.Editar(editar);
+            }
+            else if (@event.TipoPeticion == "DELETE")
+            {
+                var eliminar = new ChoferTabla
+                {
+                    Codigo = @event.Codigo,
+                    //Nombre = @event.Nombre,
+                    //Cedula = @event.Cedula,
+                    //Direccion = @event.Direccion,
+                    //Celular = @event.Celular,
+                    //Observacion = @event.Observacion,
+                    //Estado = @event.Estado,
+                    //Fecha_Ingreso = @event.Fecha_Ingreso,
+                    //Maquina = @event.Maquina,
+                    //Usuario = @event.Usuario,
+                };
+                _choferRepository.Eliminar(eliminar);
+            }
+                return Task.CompletedTask;
         }
     }
 }

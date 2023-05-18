@@ -2,7 +2,7 @@
 {
     public class CreateBancoCiaCommand : BancoCiaCommand
     {
-        public CreateBancoCiaCommand(int codigo, string inicial_Banco, string cuenta, string nombre, string numero_Cuenta, string? nombre_cuenta, int ultimo_Cheque, string? tipo_Cuenta, int anio, bool contador_Automatico, string cuenta_Cheque_Fecha, string? nombre_cta_cheque, bool estado, DateTime? ultima_Conciliacion, DateTime? fecha_ing, DateTime? fechaRegistro, string? detalle, string? maquina, DateTime? fecha, int? usuario, int? sucursal)
+        public CreateBancoCiaCommand(int? codigo, string? inicial_Banco, string? cuenta, string? nombre, string? numero_Cuenta, string? nombre_cuenta, int? ultimo_Cheque, string? tipo_Cuenta, int? anio, bool contador_Automatico, string? cuenta_Cheque_Fecha, string? nombre_cta_cheque, bool estado, DateTime? ultima_Conciliacion, DateTime? fecha_ing, DateTime? fechaRegistro, string? detalle, string? maquina, DateTime? fecha, int? usuario, int? sucursal, string tipoPeticion)
         {
             Codigo = codigo;
             Inicial_Banco = inicial_Banco;
@@ -25,6 +25,7 @@
             Fecha = fecha;
             Usuario = usuario;
             Sucursal = sucursal;
+            TipoPeticion = tipoPeticion;
         }
     }
 }

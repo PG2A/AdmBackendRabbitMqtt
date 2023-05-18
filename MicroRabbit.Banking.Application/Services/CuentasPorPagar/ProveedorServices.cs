@@ -26,7 +26,25 @@ namespace MicroRabbit.Banking.Application.Services.CuentasPorPagar
             proveedor.Ruc, proveedor.Correo, proveedor.Correofactura, proveedor.Contacto, proveedor.Bien, proveedor.Tipo, proveedor.Categoria, proveedor.Pais, proveedor.Ciudad, proveedor.Tipo_Contribuyente,
             proveedor.Dias_Credito, proveedor.Cnt_Gastos, proveedor.Observacion, proveedor.Estado, proveedor.UsuarioAprobacion, proveedor.FechaAprobacion, proveedor.UsuarioAutorizacion, proveedor.FechaAutorizacion,
             proveedor.RutaDocumentos, proveedor.Fecha_Ingreso, proveedor.Maquina, proveedor.Usuario, proveedor.Relacionado, proveedor.archivo, proveedor.nombreArchivo, proveedor.nombre_Provincia, proveedor.nombreCategoria,
-                proveedor.nombrePais, proveedor.nombreContri, proveedor.nombreDias, proveedor.codigoUsuarioAutorizacion, proveedor.nombreUsuarioAutorizacion);
+                proveedor.nombrePais, proveedor.nombreContri, proveedor.nombreDias, proveedor.codigoUsuarioAutorizacion, proveedor.nombreUsuarioAutorizacion, proveedor.TipoPeticion);
+            _eventBus.SendCommand(createProveedorCommand);
+        }
+        public void Editar(ProveedorFarmaciaModel proveedor)
+        {
+            var createProveedorCommand = new CreateProveedorCommand(proveedor.Codigo, proveedor.Codigo_Proveedor, proveedor.Sucursal, proveedor.Nombre, proveedor.Nombre_Comercial, proveedor.Direccion, proveedor.Telefono,
+            proveedor.Ruc, proveedor.Correo, proveedor.Correofactura, proveedor.Contacto, proveedor.Bien, proveedor.Tipo, proveedor.Categoria, proveedor.Pais, proveedor.Ciudad, proveedor.Tipo_Contribuyente,
+            proveedor.Dias_Credito, proveedor.Cnt_Gastos, proveedor.Observacion, proveedor.Estado, proveedor.UsuarioAprobacion, proveedor.FechaAprobacion, proveedor.UsuarioAutorizacion, proveedor.FechaAutorizacion,
+            proveedor.RutaDocumentos, proveedor.Fecha_Ingreso, proveedor.Maquina, proveedor.Usuario, proveedor.Relacionado, proveedor.archivo, proveedor.nombreArchivo, proveedor.nombre_Provincia, proveedor.nombreCategoria,
+                proveedor.nombrePais, proveedor.nombreContri, proveedor.nombreDias, proveedor.codigoUsuarioAutorizacion, proveedor.nombreUsuarioAutorizacion, proveedor.TipoPeticion);
+            _eventBus.SendCommand(createProveedorCommand);
+        }
+        public void Eliminar(ProveedorFarmaciaModel proveedor)
+        {
+            var createProveedorCommand = new CreateProveedorCommand(proveedor.Codigo, proveedor.Codigo_Proveedor, proveedor.Sucursal, proveedor.Nombre, proveedor.Nombre_Comercial, proveedor.Direccion, proveedor.Telefono,
+            proveedor.Ruc, proveedor.Correo, proveedor.Correofactura, proveedor.Contacto, proveedor.Bien, proveedor.Tipo, proveedor.Categoria, proveedor.Pais, proveedor.Ciudad, proveedor.Tipo_Contribuyente,
+            proveedor.Dias_Credito, proveedor.Cnt_Gastos, proveedor.Observacion, proveedor.Estado, proveedor.UsuarioAprobacion, proveedor.FechaAprobacion, proveedor.UsuarioAutorizacion, proveedor.FechaAutorizacion,
+            proveedor.RutaDocumentos, proveedor.Fecha_Ingreso, proveedor.Maquina, proveedor.Usuario, proveedor.Relacionado, proveedor.archivo, proveedor.nombreArchivo, proveedor.nombre_Provincia, proveedor.nombreCategoria,
+                proveedor.nombrePais, proveedor.nombreContri, proveedor.nombreDias, proveedor.codigoUsuarioAutorizacion, proveedor.nombreUsuarioAutorizacion, proveedor.TipoPeticion);
             _eventBus.SendCommand(createProveedorCommand);
         }
     }

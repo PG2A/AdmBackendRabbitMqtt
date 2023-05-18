@@ -24,5 +24,6 @@ namespace MicroRabbit.Banking.Domain.Commands.Inventario.Camion
         public string? Maquina { get; set; }
         public int Usuario { get; set; }
         public int Sucursal { get; set; }
+        public string TipoPeticion { get; set; }
     }
 }
