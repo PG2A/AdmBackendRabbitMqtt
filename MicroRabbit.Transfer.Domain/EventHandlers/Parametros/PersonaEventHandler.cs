@@ -21,23 +21,66 @@ namespace MicroRabbit.Transfer.Domain.EventHandlers.Parametros
 
         public Task Handle(PersonaCreateEvent @event)
         {
-            var grabar = new PersonaTabla
+            if (@event.TipoPeticion == "POST")
             {
-                Codigo = @event.Codigo,
-                Codigo_Usuario = @event.Codigo_Usuario,
-                Tipo_persona = @event.Tipo_persona,
-                Nombre = @event.Nombre,
-                Apellido = @event.Apellido,
-                Cedula = @event.Cedula,
-                Direccion = @event.Direccion,
-                Celular = @event.Celular,
-                Correo = @event.Correo,
-                Observacion = @event.Observacion,
-                Estado = @event.Estado,
-                ClaveMaestra = @event.ClaveMaestra,
-                Clave = @event.Clave,
-            };
-            _personaRepository.Grabar(grabar);
+                var grabar = new PersonaTabla
+                {
+                    Codigo = @event.Codigo,
+                    Codigo_Usuario = @event.Codigo_Usuario,
+                    Tipo_persona = @event.Tipo_persona,
+                    Nombre = @event.Nombre,
+                    Apellido = @event.Apellido,
+                    Cedula = @event.Cedula,
+                    Direccion = @event.Direccion,
+                    Celular = @event.Celular,
+                    Correo = @event.Correo,
+                    Observacion = @event.Observacion,
+                    Estado = @event.Estado,
+                    ClaveMaestra = @event.ClaveMaestra,
+                    Clave = @event.Clave,
+                };
+                _personaRepository.Grabar(grabar);
+            }
+            else if (@event.TipoPeticion == "PUT")
+            {
+                var editar = new PersonaTabla
+                {
+                    Codigo = @event.Codigo,
+                    Codigo_Usuario = @event.Codigo_Usuario,
+                    Tipo_persona = @event.Tipo_persona,
+                    Nombre = @event.Nombre,
+                    Apellido = @event.Apellido,
+                    Cedula = @event.Cedula,
+                    Direccion = @event.Direccion,
+                    Celular = @event.Celular,
+                    Correo = @event.Correo,
+                    Observacion = @event.Observacion,
+                    Estado = @event.Estado,
+                    ClaveMaestra = @event.ClaveMaestra,
+                    Clave = @event.Clave,
+                };
+                _personaRepository.Editar(editar);
+            }
+            else if (@event.TipoPeticion == "DELETE")
+            {
+                var eliminar = new PersonaTabla
+                {
+                    Codigo = @event.Codigo,
+                    //Codigo_Usuario = @event.Codigo_Usuario,
+                    //Tipo_persona = @event.Tipo_persona,
+                    //Nombre = @event.Nombre,
+                    //Apellido = @event.Apellido,
+                    //Cedula = @event.Cedula,
+                    //Direccion = @event.Direccion,
+                    //Celular = @event.Celular,
+                    //Correo = @event.Correo,
+                    //Observacion = @event.Observacion,
+                    //Estado = @event.Estado,
+                    //ClaveMaestra = @event.ClaveMaestra,
+                    //Clave = @event.Clave,
+                };
+                _personaRepository.Eliminar(eliminar);
+            }
             return Task.CompletedTask;
         }
     }

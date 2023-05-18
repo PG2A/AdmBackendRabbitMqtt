@@ -9,18 +9,18 @@ namespace MicroRabbit.Banking.Domain.Events.Contabilidad
 {
     public class BancoCiaCreateEvent : Event
     {
-        public int Codigo { get; set; }
-        public string Inicial_Banco { get; set; }
-        public string Cuenta { get; set; }
-        public string Nombre { get; set; }
-        public string Numero_Cuenta { get; set; }
+        public int? Codigo { get; set; }
+        public string? Inicial_Banco { get; set; }
+        public string? Cuenta { get; set; }
+        public string? Nombre { get; set; }
+        public string? Numero_Cuenta { get; set; }
         public string? Nombre_cuenta { get; set; }
-        public int Ultimo_Cheque { get; set; }
+        public int? Ultimo_Cheque { get; set; }
         public string? Tipo_Cuenta { get; set; }
-        public int Anio { get; set; }
+        public int? Anio { get; set; }
         public bool Contador_Automatico { get; set; }
         public string? Contador_AutomaticoString => Contador_Automatico ? "A" : "I";
-        public string Cuenta_Cheque_Fecha { get; set; }
+        public string? Cuenta_Cheque_Fecha { get; set; }
         public string? Nombre_cta_cheque { get; set; }
         public bool Estado { get; set; }
         public string? EstadoString => Estado ? "A" : "I";
@@ -32,8 +32,9 @@ namespace MicroRabbit.Banking.Domain.Events.Contabilidad
         public DateTime? Fecha { get; set; }
         public int? Usuario { get; set; }
         public int? Sucursal { get; set; }
+        public string TipoPeticion { get; set; }
 
-        public BancoCiaCreateEvent(int codigo, string inicial_Banco, string cuenta, string nombre, string numero_Cuenta, string? nombre_cuenta, int ultimo_Cheque, string? tipo_Cuenta, int anio, bool contador_Automatico, string cuenta_Cheque_Fecha, string? nombre_cta_cheque, bool estado, DateTime? ultima_Conciliacion, DateTime? fecha_ing, DateTime? fechaRegistro, string? detalle, string? maquina, DateTime? fecha, int? usuario, int? sucursal)
+        public BancoCiaCreateEvent(int? codigo, string? inicial_Banco, string? cuenta, string? nombre, string? numero_Cuenta, string? nombre_cuenta, int? ultimo_Cheque, string? tipo_Cuenta, int? anio, bool contador_Automatico, string? cuenta_Cheque_Fecha, string? nombre_cta_cheque, bool estado, DateTime? ultima_Conciliacion, DateTime? fecha_ing, DateTime? fechaRegistro, string? detalle, string? maquina, DateTime? fecha, int? usuario, int? sucursal, string tipoPeticion)
         {
             Codigo = codigo;
             Inicial_Banco = inicial_Banco;
@@ -56,6 +57,7 @@ namespace MicroRabbit.Banking.Domain.Events.Contabilidad
             Fecha = fecha;
             Usuario = usuario;
             Sucursal = sucursal;
+            TipoPeticion = tipoPeticion;
         }
     }
 }

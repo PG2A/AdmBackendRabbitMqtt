@@ -8,7 +8,7 @@ namespace MicroRabbit.Banking.Domain.Commands.Parametros.Persona
 {
     public class CreatePersonaCommand : PersonaCommand
     {
-        public CreatePersonaCommand(int codigo, string codigo_Usuario, string tipo_persona, string nombre, string apellido, string cedula, string direccion, string? celular, string? correo, string? observacion, bool estado, bool? claveMaestra, int usuariomaq, string maquina, string clave)
+        public CreatePersonaCommand(int codigo, string? codigo_Usuario, string? tipo_persona, string? nombre, string? apellido, string? cedula, string? direccion, string? celular, string? correo, string? observacion, bool? estado, bool? claveMaestra, int? usuariomaq, string? maquina, string? clave, string tipopeticion)
         {
             Codigo = codigo;
             Codigo_Usuario = codigo_Usuario;
@@ -25,6 +25,7 @@ namespace MicroRabbit.Banking.Domain.Commands.Parametros.Persona
             Usuariomaq = usuariomaq;
             Maquina = maquina;
             Clave = clave;
+            TipoPeticion = tipopeticion;
         }
     }
 }

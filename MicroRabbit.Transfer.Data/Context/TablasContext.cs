@@ -24,7 +24,10 @@ namespace MicroRabbit.Transfer.Data.Context
         public DbSet<PersonaTabla> ADM_PERSONA { get; set; }
         public DbSet<BancoCiaTabla> CNT_BANCOCIA { get; set; }
 
-
+        public void ExecuteSqlCommand(string sql, params object[] parameters)
+        {
+            Database.ExecuteSqlRaw(sql, parameters);
+        }
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{
         //    optionsBuilder.UseSqlServer("Data Source=192.168.0.70;Initial Catalog=BDADMEP;user id=BIROBID;password=IROBID20");

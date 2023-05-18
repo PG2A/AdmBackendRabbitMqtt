@@ -15,10 +15,22 @@ namespace MicroRabbit.Banking.Api.Controllers.Contabilidad
             _bancociaServices = bancociaServices;
         }
         [HttpPost]
-        public IActionResult Post([FromBody] BancoCiaModel cliente)
+        public IActionResult Post([FromBody] BancoCiaModel bancocia)
         {
-            _bancociaServices.Enviar(cliente);
-            return Ok(cliente);
+            _bancociaServices.Enviar(bancocia);
+            return Ok(bancocia);
+        }
+        [HttpPut("editar")]
+        public IActionResult Put([FromBody] BancoCiaModel bancocia)
+        {
+            _bancociaServices.Editar(bancocia);
+            return Ok(bancocia);
+        }
+        [HttpDelete("eliminar")]
+        public IActionResult Delete([FromBody] BancoCiaModel bancocia)
+        {
+            _bancociaServices.Eliminar(bancocia);
+            return Ok(bancocia);
         }
     }
 }

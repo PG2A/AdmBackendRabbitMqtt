@@ -22,7 +22,7 @@ namespace MicroRabbit.Banking.Domain.CommandHandlers.Contabilidad
         {
             _eventBus.Publish(new BancoCiaCreateEvent(request.Codigo, request.Inicial_Banco, request.Cuenta, request.Nombre, request.Numero_Cuenta, request.Nombre_cuenta, request.Ultimo_Cheque, request.Tipo_Cuenta, request.Anio,
                 request.Contador_Automatico, request.Cuenta_Cheque_Fecha, request.Nombre_cta_cheque, request.Estado, request.Ultima_Conciliacion, request.Fecha_ing, request.FechaRegistro, request.Detalle, 
-                request.Maquina, request.Fecha, request.Usuario, request.Sucursal));
+                request.Maquina, request.Fecha, request.Usuario, request.Sucursal, request.TipoPeticion));
             return Task.FromResult(true);
 
         }

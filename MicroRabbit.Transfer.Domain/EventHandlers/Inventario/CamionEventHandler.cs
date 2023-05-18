@@ -1,13 +1,7 @@
 ﻿using MicroRabbit.Domain.Core.Bus;
 using MicroRabbit.Transfer.Domain.Events.Inventario;
 using MicroRabbit.Transfer.Domain.Interfaces.Inventario;
-using MicroRabbit.Transfer.Domain.Models;
 using MicroRabbit.Transfer.Domain.Models.Inventario;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MicroRabbit.Transfer.Domain.EventHandlers.Inventario
 {
@@ -22,22 +16,63 @@ namespace MicroRabbit.Transfer.Domain.EventHandlers.Inventario
 
         public Task Handle(CamionCreateEvent @event)
         {
-            var grabar = new CamionTabla
+            if (@event.TipoPeticion == "POST")
             {
-                Codigo = @event.Codigo,
-                Nombre = @event.Nombre,
-                Placa = @event.Placa,
-                Volumen = @event.Volumen,
-                Anio = @event.Anio,
-                Peso = @event.Peso,
-                Chofer = @event.Chofer,
-                Estado = @event.Estado,
-                Fecha_Ingreso = @event.Fecha_Ingreso,
-                Maquina = @event.Maquina,
-                Usuario = @event.Usuario,
-                Sucursal = @event.Sucursal,
-            };
-            _camionRepository.Grabar(grabar);
+                var grabar = new CamionTabla
+                {
+                    Codigo = @event.Codigo,
+                    Nombre = @event.Nombre,
+                    Placa = @event.Placa,
+                    Volumen = @event.Volumen,
+                    Anio = @event.Anio,
+                    Peso = @event.Peso,
+                    Chofer = @event.Chofer,
+                    Estado = @event.Estado,
+                    Fecha_Ingreso = @event.Fecha_Ingreso,
+                    Maquina = @event.Maquina,
+                    Usuario = @event.Usuario,
+                    Sucursal = @event.Sucursal,
+                };
+                _camionRepository.Grabar(grabar);
+            }
+            else if (@event.TipoPeticion == "PUT")
+            {
+                var editar = new CamionTabla
+                {
+                    Codigo = @event.Codigo,
+                    Nombre = @event.Nombre,
+                    Placa = @event.Placa,
+                    Volumen = @event.Volumen,
+                    Anio = @event.Anio,
+                    Peso = @event.Peso,
+                    Chofer = @event.Chofer,
+                    Estado = @event.Estado,
+                    Fecha_Ingreso = @event.Fecha_Ingreso,
+                    Maquina = @event.Maquina,
+                    Usuario = @event.Usuario,
+                    Sucursal = @event.Sucursal,
+                };
+                _camionRepository.Grabar(editar);
+            }
+            else if (@event.TipoPeticion == "DELETE")
+            {
+                var eliminar = new CamionTabla
+                {
+                    Codigo = @event.Codigo,
+                    //Nombre = @event.Nombre,
+                    //Placa = @event.Placa,
+                    //Volumen = @event.Volumen,
+                    //Anio = @event.Anio,
+                    //Peso = @event.Peso,
+                    //Chofer = @event.Chofer,
+                    //Estado = @event.Estado,
+                    //Fecha_Ingreso = @event.Fecha_Ingreso,
+                    //Maquina = @event.Maquina,
+                    //Usuario = @event.Usuario,
+                    //Sucursal = @event.Sucursal,
+                };
+                _camionRepository.Grabar(eliminar);
+            }
             return Task.CompletedTask;
         }
     }

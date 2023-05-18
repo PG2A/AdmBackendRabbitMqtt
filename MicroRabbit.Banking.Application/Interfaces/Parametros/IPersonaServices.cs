@@ -10,5 +10,7 @@ namespace MicroRabbit.Banking.Application.Interfaces.Parametros
     public interface IPersonaServices
     {
         void Enviar(PersonaModel persona);
+        void Editar(PersonaModel persona);
+        void Eliminar(PersonaModel persona);
     }
 }

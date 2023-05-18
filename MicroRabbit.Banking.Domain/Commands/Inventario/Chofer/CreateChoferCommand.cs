@@ -8,7 +8,7 @@ namespace MicroRabbit.Banking.Domain.Commands.Inventario.Chofer
 {
     public class CreateChoferCommand : ChoferCommand
     {
-        public CreateChoferCommand(int codigo, string nombre, string cedula, string direccion, string celular, string observacion, bool? estado, DateTime fecha_Ingreso, string? detalle, string? maquina, int usuario, int sucursal) {
+        public CreateChoferCommand(int codigo, string nombre, string cedula, string direccion, string celular, string observacion, bool? estado, DateTime fecha_Ingreso, string? detalle, string? maquina, int usuario, int sucursal, string tipopeticion) {
             Codigo = codigo;
             Nombre = nombre;
             Cedula = cedula;
@@ -21,6 +21,7 @@ namespace MicroRabbit.Banking.Domain.Commands.Inventario.Chofer
             Maquina = maquina;
             Usuario = usuario;
             Sucursal = sucursal;
+            TipoPeticion = tipopeticion;
         }
     }
 }

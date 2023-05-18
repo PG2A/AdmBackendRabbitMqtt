@@ -10,5 +10,7 @@ namespace MicroRabbit.Banking.Application.Interfaces.CuentasPorPagar
     public interface IProveedorServices
     {
         void Enviar(ProveedorFarmaciaModel proveedor);
+        void Editar(ProveedorFarmaciaModel proveedor);
+        void Eliminar(ProveedorFarmaciaModel proveedor);
     }
 }

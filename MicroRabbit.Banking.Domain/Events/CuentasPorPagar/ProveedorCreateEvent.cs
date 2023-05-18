@@ -48,8 +48,8 @@ namespace MicroRabbit.Banking.Domain.Events.CuentasPorPagar
         public string? nombreDias { get; set; }
         public string? codigoUsuarioAutorizacion { get; set; }
         public string? nombreUsuarioAutorizacion { get; set; }
-
-        public ProveedorCreateEvent(int? codigo, string codigo_Proveedor, int sucursal, string nombre, string nombre_Comercial, string direccion, string telefono, string ruc, string correo, string correofactura, string contacto, char bien, string tipo, string categoria, string pais, string ciudad, int tipo_Contribuyente, int dias_Credito, int cnt_Gastos, string observacion, bool estado, int usuarioAprobacion, DateTime fechaAprobacion, int? usuarioAutorizacion, DateTime? fechaAutorizacion, string? rutaDocumentos, DateTime? fecha_Ingreso, string maquina, int usuario, int relacionado, string? archivo, string? nombreArchivo, string? nombre_Provincia, string? nombreCategoria, string? nombrePais, string? nombreContri, string? nombreDias, string? codigoUsuarioAutorizacion, string? nombreUsuarioAutorizacion)
+        public string TipoPeticion { get; set; }
+        public ProveedorCreateEvent(int? codigo, string codigo_Proveedor, int sucursal, string nombre, string nombre_Comercial, string direccion, string telefono, string ruc, string correo, string correofactura, string contacto, char bien, string tipo, string categoria, string pais, string ciudad, int tipo_Contribuyente, int dias_Credito, int cnt_Gastos, string observacion, bool estado, int usuarioAprobacion, DateTime fechaAprobacion, int? usuarioAutorizacion, DateTime? fechaAutorizacion, string? rutaDocumentos, DateTime? fecha_Ingreso, string maquina, int usuario, int relacionado, string? archivo, string? nombreArchivo, string? nombre_Provincia, string? nombreCategoria, string? nombrePais, string? nombreContri, string? nombreDias, string? codigoUsuarioAutorizacion, string? nombreUsuarioAutorizacion, string tipoPeticion)
         {
             Codigo = codigo;
             Codigo_Proveedor = codigo_Proveedor;
@@ -90,6 +90,7 @@ namespace MicroRabbit.Banking.Domain.Events.CuentasPorPagar
             this.nombreDias = nombreDias;
             this.codigoUsuarioAutorizacion = codigoUsuarioAutorizacion;
             this.nombreUsuarioAutorizacion = nombreUsuarioAutorizacion;
+            TipoPeticion = tipoPeticion;
         }
     }
 }

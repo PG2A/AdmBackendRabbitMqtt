@@ -24,8 +24,8 @@ namespace MicroRabbit.Transfer.Domain.Events.Inventario
         public string? Maquina { get; set; }
         public int Usuario { get; set; }
         public int Sucursal { get; set; }
-
-        public CamionCreateEvent(int codigo, string nombre, string placa, float volumen, int anio, float peso, int chofer, string? nombrechofer, string? nombresucursal, bool? estado, string? detalle, DateTime fecha_Ingreso, string? maquina, int usuario, int sucursal)
+        public string TipoPeticion { get; set; }
+        public CamionCreateEvent(int codigo, string nombre, string placa, float volumen, int anio, float peso, int chofer, string? nombrechofer, string? nombresucursal, bool? estado, string? detalle, DateTime fecha_Ingreso, string? maquina, int usuario, int sucursal, string tipopeticion)
         {
             Codigo = codigo;
             Nombre = nombre;
@@ -42,6 +42,7 @@ namespace MicroRabbit.Transfer.Domain.Events.Inventario
             Maquina = maquina;
             Usuario = usuario;
             Sucursal = sucursal;
+            TipoPeticion = tipopeticion;
         }
     }
 }
