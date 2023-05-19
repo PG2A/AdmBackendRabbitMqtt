@@ -1,4 +1,5 @@
 ﻿
+using MicroRabbit.Banking.Domain.Models.Inventario;
 using MicroRabbit.Domain.Core.Events;
 
 
@@ -44,9 +45,9 @@ namespace MicroRabbit.Banking.Domain.Events.Inventario
         public int Camion { get; set; }
         public int Chofer { get; set; }
 
-      //  public virtual List<TransferenciaBodegaDetModel>? Productos { get; set; }
+       public virtual List<TransferenciaBodegaDetModel>? Productos { get; set; }
 
-        public TransferenciaBodegaCabCreateEvent(string? codigo, string origen, int sucursal, int? sucursalD, string tipo, string tipoguia, string serie, bool remision, int numero, int bodega, int? numpedido, int? numguia, string? cliente, DateTime fechaemi, DateTime fechaven, DateTime? fechaent, int? bodegadestino, int? vendedor, int? proveedor, float? peso, float? volumen, string? motivo, string? observacion, string? comentario, string? seccontable, char estado, string? estadodoc, bool? enviadosri, string? numautorizacion, string? codigorel, DateTime fecha_ing, string maquina, int usuario, string direccionOrigen, string direcciondestino, int camion, int chofer)
+        public TransferenciaBodegaCabCreateEvent(string? codigo, string origen, int sucursal, int? sucursalD, string tipo, string tipoguia, string serie, bool remision, int numero, int bodega, int? numpedido, int? numguia, string? cliente, DateTime fechaemi, DateTime fechaven, DateTime? fechaent, int? bodegadestino, int? vendedor, int? proveedor, float? peso, float? volumen, string? motivo, string? observacion, string? comentario, string? seccontable, char estado, string? estadodoc, bool? enviadosri, string? numautorizacion, string? codigorel, DateTime fecha_ing, string maquina, int usuario, string direccionOrigen, string direcciondestino, int camion, int chofer, List<TransferenciaBodegaDetModel> productos)
         {
             Codigo = codigo;
             Origen = origen;
@@ -85,7 +86,7 @@ namespace MicroRabbit.Banking.Domain.Events.Inventario
             Direcciondestino = direcciondestino;
             Camion = camion;
             Chofer = chofer;
-           // Productos = productos;
+            Productos = productos;
         }
     }
 }

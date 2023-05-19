@@ -46,7 +46,7 @@ namespace MicroRabbit.Banking.Application.Models.Inventario
         public string Direcciondestino { get; set; }
         public int Camion { get; set; }
         public int Chofer { get; set; }
-       // public virtual List<TransferenciaBodegaDetModel>? Productos { get; set; }
+        public  List<TransferenciaBodegaDetModel>? Productos { get; set; }
 
     }
 }

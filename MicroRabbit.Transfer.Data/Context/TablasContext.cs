@@ -15,6 +15,9 @@ namespace MicroRabbit.Transfer.Data.Context
         public DbSet<ProductosTabla> INV_PRODUCTO { get; set; }
         public DbSet<Nivel2Tabla> INV_NIVEL_2 { get; set; }
         public DbSet<Nivel3Tabla> INV_NIVEL_3 { get; set;}
+        public DbSet<VenCabEgresoTabla> VEN_CABEGRESO { get; set; }
+        public DbSet<VenDetEgresoTabla> VEN_DETEGRESO { get; set; }
+        public DbSet<VenCabEgresoBodTabla> VEN_CABEGRESO_BOD { get; set; }
 
 
             //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
