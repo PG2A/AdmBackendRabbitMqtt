@@ -55,7 +55,6 @@ builder.Services.AddDbContext<TablasContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("TransferDbConnection"));
 });
 
-
 builder.Services.Configure<RabbitMQSettings>(builder.Configuration.GetSection("RabbitMQSettings"));
 builder.Services.RegisterServices(builder.Configuration);
 
@@ -68,6 +67,8 @@ builder.Services.AddTransient<IChoferServices, ChoferServices>();
 builder.Services.AddTransient<IProveedorServices, ProveedorServices>();
 builder.Services.AddTransient<IPersonaServices, PersonaServices>();
 builder.Services.AddTransient<IBancoCiaServices, BancoCiaServices>();
+builder.Services.AddTransient<INivel2Services, Nivel2Services>();
+builder.Services.AddTransient<INivel3Services, NIvel3Services>();
 builder.Services.AddTransient<IEventHandler<Nivel1CreateEvent>, Nivel1EventHandler>();
 builder.Services.AddTransient<IEventHandler<ProductoCreateEvent>, ProductoEventHandler>();
 builder.Services.AddTransient<IEventHandler<PersonaCreateEvent>, PersonaEventHandler>();
@@ -76,6 +77,9 @@ builder.Services.AddTransient<IEventHandler<CamionCreateEvent>, CamionEventHandl
 builder.Services.AddTransient<IEventHandler<ProveedorCreateEvent>, ProveedorEventHandler>();
 builder.Services.AddTransient<IEventHandler<BancoCiaCreateEvent>, BancoCiaEventHandler>();
 builder.Services.AddTransient<Nivel1DbContext>();
+builder.Services.AddTransient<IEventHandler<Nivel2CreateEvent>, Nivel2EventHandler>();
+builder.Services.AddTransient<IEventHandler<Nivel3CreateEvent>, Nivel3EventHandler>();
+
 builder.Services.AddTransient<INivelRepository, Nivel1Repository>();
 builder.Services.AddTransient<IClienteRepository, ClienteRepository>();
 builder.Services.AddTransient<IProductoRepository, ProductoRepository>();
@@ -84,6 +88,10 @@ builder.Services.AddTransient<ICamionRepository, CamionRepository>();
 builder.Services.AddTransient<IProveedorRepository, ProveedorRepository>();
 builder.Services.AddTransient<IPersonaRepository, PersonaRepository>();
 builder.Services.AddTransient<IBancoCiaRepository, BancoCiaRepository>();
+builder.Services.AddTransient<INivel2Repository, Nivel2Repository>();
+builder.Services.AddTransient<INivel3Repository, Nivel3Repository>();
+
+
 builder.Services.AddTransient<TablasContext>();
 
 
@@ -100,6 +108,10 @@ builder.Services.AddTransient<ChoferEventHandler>();
 builder.Services.AddTransient<ProveedorEventHandler>();
 builder.Services.AddTransient<PersonaEventHandler>();
 builder.Services.AddTransient<BancoCiaEventHandler>();
+builder.Services.AddTransient<Nivel2EventHandler>();
+builder.Services.AddTransient<Nivel3EventHandler>();
+
+
 
 
 
@@ -117,11 +129,6 @@ var eventBus = app.Services.GetRequiredService<IEventBus>();
 eventBus.Subscribe<Nivel1CreateEvent, Nivel1EventHandler>();
 eventBus.Subscribe<ClienteCreateEvent, ClienteEventHandller>();
 eventBus.Subscribe<ProductoCreateEvent, ProductoEventHandler>();
-eventBus.Subscribe<CamionCreateEvent, CamionEventHandler>();
-eventBus.Subscribe<ChoferCreateEvent, ChoferEventHandler>();
-eventBus.Subscribe<ProveedorCreateEvent, ProveedorEventHandler>();
-eventBus.Subscribe<PersonaCreateEvent, PersonaEventHandler>();
-eventBus.Subscribe<BancoCiaCreateEvent, BancoCiaEventHandler>();
 
 
 

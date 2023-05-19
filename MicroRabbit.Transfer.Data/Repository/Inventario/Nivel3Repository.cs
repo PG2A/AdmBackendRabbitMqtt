@@ -1,24 +1,23 @@
 ﻿using MicroRabbit.Transfer.Data.Context;
 using MicroRabbit.Transfer.Domain.Interfaces.Inventario;
-using MicroRabbit.Transfer.Domain.Models;
-
-
+using MicroRabbit.Transfer.Domain.Models.Inventario;
 
 namespace MicroRabbit.Transfer.Data.Repository.Inventario
 {
-    public class Nivel3Repository : INivelRepository
+    public class Nivel3Repository : INivel3Repository
     {
 
-        private readonly TablasContext tablasContext;
+        private readonly TablasContext _tablasContext;
 
         public Nivel3Repository(TablasContext tablasContext)
         {
-            this.tablasContext = tablasContext;
+            _tablasContext = tablasContext;
         }
 
-        public void AddNivel1(Nivel1Tabla nivel1)
+        public void Grabar(Nivel3Tabla nivel)
         {
-            throw new NotImplementedException();
+            _tablasContext.Add(nivel);
+            _tablasContext.SaveChanges();
         }
     }
 }

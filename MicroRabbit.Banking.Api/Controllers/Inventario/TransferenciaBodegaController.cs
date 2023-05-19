@@ -4,8 +4,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MicroRabbit.Banking.Api.Controllers.Inventario
 {
+    [Route("api/TranferenciaBodega")]
+    [ApiController]
     public class TransferenciaBodegaController : ControllerBase
     {
+        
         private readonly ITransferenciaBodegaServices _transferenciaServices;
 
         public TransferenciaBodegaController(ITransferenciaBodegaServices transferenciaServices)
@@ -14,7 +17,7 @@ namespace MicroRabbit.Banking.Api.Controllers.Inventario
         }
 
         [HttpPost]
-        public IActionResult PostCab([FromBody] TransferenciaBodegaCabModel cabecera)
+        public IActionResult Post([FromBody] TransferenciaBodegaCabModel cabecera)
         {
             _transferenciaServices.EnviarCab(cabecera);
             return Ok(cabecera);
