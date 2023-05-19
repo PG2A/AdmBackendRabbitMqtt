@@ -1,18 +1,32 @@
 using MediatR;
 using MicroRabbit.Banking.Application.Interfaces;
+using MicroRabbit.Banking.Application.Interfaces.Contabilidad;
 using MicroRabbit.Banking.Application.Interfaces.CuentasPorCobrar;
+using MicroRabbit.Banking.Application.Interfaces.CuentasPorPagar;
 using MicroRabbit.Banking.Application.Interfaces.Inventario;
+using MicroRabbit.Banking.Application.Interfaces.Parametros;
+using MicroRabbit.Banking.Application.Services.Contabilidad;
 using MicroRabbit.Banking.Application.Services.CuentasPorCobrar;
+using MicroRabbit.Banking.Application.Services.CuentasPorPagar;
 using MicroRabbit.Banking.Application.Services.Inventario;
+using MicroRabbit.Banking.Application.Services.Parametros;
 using MicroRabbit.Banking.Domain.CommandHandlers;
+using MicroRabbit.Banking.Domain.CommandHandlers.Contabilidad;
 using MicroRabbit.Banking.Domain.CommandHandlers.CuentasPorCobrar;
+using MicroRabbit.Banking.Domain.CommandHandlers.CuentasPorPagar;
 using MicroRabbit.Banking.Domain.CommandHandlers.Inventario;
+using MicroRabbit.Banking.Domain.CommandHandlers.Parametros;
 using MicroRabbit.Banking.Domain.Commands;
+using MicroRabbit.Banking.Domain.Commands.Contabilidad.BancoCia;
 using MicroRabbit.Banking.Domain.Commands.CuentasPorCobrar.Cliente;
+using MicroRabbit.Banking.Domain.Commands.CuentasPorPagar.Proveedor;
+using MicroRabbit.Banking.Domain.Commands.Inventario.Camion;
+using MicroRabbit.Banking.Domain.Commands.Inventario.Chofer;
 using MicroRabbit.Banking.Domain.Commands.Inventario.Nivel2;
 using MicroRabbit.Banking.Domain.Commands.Inventario.Nivel3;
 using MicroRabbit.Banking.Domain.Commands.Inventario.Producto;
 using MicroRabbit.Banking.Domain.Commands.Inventario.TransferenciaBodega;
+using MicroRabbit.Banking.Domain.Commands.Parametros.Persona;
 using MicroRabbit.Infra.Bus;
 using MicroRabbit.Infra.IoC;
 
@@ -42,7 +56,11 @@ builder.Services.AddTransient<ITransferenciaBodegaServices, TransferenciaBodegaS
 builder.Services.AddTransient<IProductoServices, ProductoServices>();
 builder.Services.AddTransient<INivel2Services, Nivel2Services>();
 builder.Services.AddTransient<INivel3Services, NIvel3Services>();
-
+builder.Services.AddTransient<ICamionServices, CamionServices>();
+builder.Services.AddTransient<IChoferServices, ChoferServices>();
+builder.Services.AddTransient<IProveedorServices, ProveedorServices>();
+builder.Services.AddTransient<IPersonaServices, PersonaServices>();
+builder.Services.AddTransient<IBancoCiaServices, BancoCiaServices>();
 
 
 
@@ -52,6 +70,11 @@ builder.Services.AddTransient<IRequestHandler<CreateTransferenciaBodegaCabComman
 builder.Services.AddTransient<IRequestHandler<CreateProductoCommand, bool>, ProductoCommandHandler>();
 builder.Services.AddTransient<IRequestHandler<CreateNivel2Command, bool>, Nivel2CommandHandler>();
 builder.Services.AddTransient<IRequestHandler<CreateNivel3Command, bool>, Nivel3CommandHandler>();
+builder.Services.AddTransient<IRequestHandler<CreateCamionCommand, bool>, CamionCommandHandler>();
+builder.Services.AddTransient<IRequestHandler<CreateChoferCommand, bool>, ChoferCommandHandler>();
+builder.Services.AddTransient<IRequestHandler<CreateProveedorCommand, bool>, ProveedorCommandHandler>();
+builder.Services.AddTransient<IRequestHandler<CreatePersonaCommand, bool>, PersonaCommandHandler>();
+builder.Services.AddTransient<IRequestHandler<CreateBancoCiaCommand, bool>, BancoCiaCommandHandler>();
 
 
 

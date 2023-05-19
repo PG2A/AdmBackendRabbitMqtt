@@ -2,6 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using MicroRabbit.Transfer.Domain.Models;
 using MicroRabbit.Transfer.Domain.Models.Inventario;
+using MicroRabbit.Transfer.Domain.Models.Contabilidad;
+using MicroRabbit.Transfer.Domain.Models.CuentasPorPagar;
+using MicroRabbit.Transfer.Domain.Models.Parametros;
 
 namespace MicroRabbit.Transfer.Data.Context
 {
@@ -15,9 +18,15 @@ namespace MicroRabbit.Transfer.Data.Context
         public DbSet<ProductosTabla> INV_PRODUCTO { get; set; }
         public DbSet<Nivel2Tabla> INV_NIVEL_2 { get; set; }
         public DbSet<Nivel3Tabla> INV_NIVEL_3 { get; set;}
+        public DbSet<CamionTabla> INV_CAMION { get; set; }
+        public DbSet<ChoferTabla> INV_CHOFER { get; set; }
+        public DbSet<ProveedorTabla> CXP_PROVEEDOR { get; set; }
+        public DbSet<PersonaTabla> ADM_PERSONA { get; set; }
+        public DbSet<BancoCiaTabla> CNT_BANCOCIA { get; set; }
         public DbSet<VenCabEgresoTabla> VEN_CABEGRESO { get; set; }
         public DbSet<VenDetEgresoTabla> VEN_DETEGRESO { get; set; }
         public DbSet<VenCabEgresoBodTabla> VEN_CABEGRESO_BOD { get; set; }
+        public DbSet<VenDetEgresoBodTabla> VEN_DETEGRESO_BOD { get; set; }
 
 
             //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

@@ -19,9 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\Contabilidad\" />
-    <Folder Include="Controllers\CuentasPorPagar\" />
-    <Folder Include="Controllers\Parametros\" />
     <Folder Include="Controllers\PosPuntoVenta\" />
     <Folder Include="Controllers\Ventas\" />
   </ItemGroup>
