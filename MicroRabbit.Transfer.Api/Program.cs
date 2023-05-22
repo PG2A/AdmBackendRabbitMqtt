@@ -67,6 +67,7 @@ builder.Services.AddTransient<IChoferServices, ChoferServices>();
 builder.Services.AddTransient<IProveedorServices, ProveedorServices>();
 builder.Services.AddTransient<IPersonaServices, PersonaServices>();
 builder.Services.AddTransient<IBancoCiaServices, BancoCiaServices>();
+builder.Services.AddTransient<IMotivosInventarioServices, MotivosInventarioServices>();
 builder.Services.AddTransient<INivel2Services, Nivel2Services>();
 builder.Services.AddTransient<INivel3Services, NIvel3Services>();
 builder.Services.AddTransient<IEventHandler<Nivel1CreateEvent>, Nivel1EventHandler>();
@@ -76,6 +77,7 @@ builder.Services.AddTransient<IEventHandler<ChoferCreateEvent>, ChoferEventHandl
 builder.Services.AddTransient<IEventHandler<CamionCreateEvent>, CamionEventHandler>();
 builder.Services.AddTransient<IEventHandler<ProveedorCreateEvent>, ProveedorEventHandler>();
 builder.Services.AddTransient<IEventHandler<BancoCiaCreateEvent>, BancoCiaEventHandler>();
+builder.Services.AddTransient<IEventHandler<MotivosInventarioCreateEvent>, MotivosInventarioEventHandler>();
 builder.Services.AddTransient<Nivel1DbContext>();
 builder.Services.AddTransient<IEventHandler<Nivel2CreateEvent>, Nivel2EventHandler>();
 builder.Services.AddTransient<IEventHandler<Nivel3CreateEvent>, Nivel3EventHandler>();
@@ -92,6 +94,7 @@ builder.Services.AddTransient<INivel2Repository, Nivel2Repository>();
 builder.Services.AddTransient<INivel3Repository, Nivel3Repository>();
 
 
+builder.Services.AddTransient<IMotivosInventarioRepository, MotivosInventarioRepository>();
 builder.Services.AddTransient<TablasContext>();
 
 
@@ -112,6 +115,7 @@ builder.Services.AddTransient<Nivel2EventHandler>();
 builder.Services.AddTransient<Nivel3EventHandler>();
 
 
+builder.Services.AddTransient<MotivosInventarioEventHandler>();
 
 
 
