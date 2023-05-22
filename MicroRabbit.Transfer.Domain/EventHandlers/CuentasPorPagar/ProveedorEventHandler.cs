@@ -61,7 +61,7 @@ namespace MicroRabbit.Transfer.Domain.EventHandlers.CuentasPorPagar
                 };
                 _proveedorRepository.GrabarTabla(grabar);
             }
-            else if (@event.TipoPeticion == "PUT")
+            if (@event.TipoPeticion == "PUT")
             {
                 var editar = new ProveedorTabla
                 {
