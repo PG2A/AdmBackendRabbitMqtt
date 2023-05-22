@@ -1,14 +1,8 @@
 ﻿using MediatR;
 using MicroRabbit.Banking.Application.Interfaces.Inventario;
 using MicroRabbit.Banking.Application.Models.Inventario;
-using MicroRabbit.Banking.Domain.Commands.Inventario.Camion;
 using MicroRabbit.Banking.Domain.Commands.Inventario.MotivosInventario;
 using MicroRabbit.Domain.Core.Bus;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MicroRabbit.Banking.Application.Services.Inventario
 {
