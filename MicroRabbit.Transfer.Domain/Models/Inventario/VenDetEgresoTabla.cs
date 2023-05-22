@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
+
 
 namespace MicroRabbit.Transfer.Domain.Models.Inventario
 {
     public class VenDetEgresoTabla
     {
+        [Key]
         public string Codigo { get; set; }
         public int Linea { get; set; }
         public int Producto { get; set; }
