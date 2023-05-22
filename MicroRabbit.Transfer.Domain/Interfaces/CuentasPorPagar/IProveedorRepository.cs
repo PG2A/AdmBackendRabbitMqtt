@@ -11,6 +11,5 @@ namespace MicroRabbit.Transfer.Domain.Interfaces.CuentasPorPagar
     {
         void GrabarTabla(ProveedorTabla proveedorTabla);
         void EditarTabla(ProveedorTabla proveedorTabla);
-        void EliminarTabla(ProveedorTabla proveedorTabla);
     }
 }

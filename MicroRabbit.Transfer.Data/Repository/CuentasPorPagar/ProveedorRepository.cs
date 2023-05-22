@@ -1,13 +1,6 @@
 ﻿using MicroRabbit.Transfer.Data.Context;
 using MicroRabbit.Transfer.Domain.Interfaces.CuentasPorPagar;
-using MicroRabbit.Transfer.Domain.Interfaces.Inventario;
 using MicroRabbit.Transfer.Domain.Models.CuentasPorPagar;
-using MicroRabbit.Transfer.Domain.Models.Inventario;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MicroRabbit.Transfer.Data.Repository.CuentasPorPagar
 {
@@ -17,6 +10,12 @@ namespace MicroRabbit.Transfer.Data.Repository.CuentasPorPagar
         public ProveedorRepository(TablasContext tablasContext)
         {
             _tablasContext = tablasContext;
+        }
+
+        public void EditarTabla(ProveedorTabla proveedor)
+        {
+            _tablasContext.Update(proveedor);
+            _tablasContext.SaveChanges();
         }
 
         public void GrabarTabla(ProveedorTabla proveedor)
