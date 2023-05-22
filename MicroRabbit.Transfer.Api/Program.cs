@@ -68,6 +68,7 @@ builder.Services.AddTransient<IChoferServices, ChoferServices>();
 builder.Services.AddTransient<IProveedorServices, ProveedorServices>();
 builder.Services.AddTransient<IPersonaServices, PersonaServices>();
 builder.Services.AddTransient<IBancoCiaServices, BancoCiaServices>();
+builder.Services.AddTransient<IMotivosInventarioServices, MotivosInventarioServices>();
 builder.Services.AddTransient<IEventHandler<Nivel1CreateEvent>, Nivel1EventHandler>();
 builder.Services.AddTransient<IEventHandler<ProductoCreateEvent>, ProductoEventHandler>();
 builder.Services.AddTransient<IEventHandler<PersonaCreateEvent>, PersonaEventHandler>();
@@ -75,6 +76,7 @@ builder.Services.AddTransient<IEventHandler<ChoferCreateEvent>, ChoferEventHandl
 builder.Services.AddTransient<IEventHandler<CamionCreateEvent>, CamionEventHandler>();
 builder.Services.AddTransient<IEventHandler<ProveedorCreateEvent>, ProveedorEventHandler>();
 builder.Services.AddTransient<IEventHandler<BancoCiaCreateEvent>, BancoCiaEventHandler>();
+builder.Services.AddTransient<IEventHandler<MotivosInventarioCreateEvent>, MotivosInventarioEventHandler>();
 builder.Services.AddTransient<Nivel1DbContext>();
 builder.Services.AddTransient<INivelRepository, Nivel1Repository>();
 builder.Services.AddTransient<IClienteRepository, ClienteRepository>();
@@ -84,6 +86,7 @@ builder.Services.AddTransient<ICamionRepository, CamionRepository>();
 builder.Services.AddTransient<IProveedorRepository, ProveedorRepository>();
 builder.Services.AddTransient<IPersonaRepository, PersonaRepository>();
 builder.Services.AddTransient<IBancoCiaRepository, BancoCiaRepository>();
+builder.Services.AddTransient<IMotivosInventarioRepository, MotivosInventarioRepository>();
 builder.Services.AddTransient<TablasContext>();
 
 
@@ -100,6 +103,7 @@ builder.Services.AddTransient<ChoferEventHandler>();
 builder.Services.AddTransient<ProveedorEventHandler>();
 builder.Services.AddTransient<PersonaEventHandler>();
 builder.Services.AddTransient<BancoCiaEventHandler>();
+builder.Services.AddTransient<MotivosInventarioEventHandler>();
 
 
 

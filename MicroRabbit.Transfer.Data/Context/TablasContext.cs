@@ -23,6 +23,7 @@ namespace MicroRabbit.Transfer.Data.Context
         public DbSet<ProveedorTabla> CXP_PROVEEDOR { get; set; }
         public DbSet<PersonaTabla> ADM_PERSONA { get; set; }
         public DbSet<BancoCiaTabla> CNT_BANCOCIA { get; set; }
+        public DbSet<MotivosInventarioTabla> INV_MOTIVO_MOVIMIENTO { get; set; }
 
         public void ExecuteSqlCommand(string sql, params object[] parameters)
         {
