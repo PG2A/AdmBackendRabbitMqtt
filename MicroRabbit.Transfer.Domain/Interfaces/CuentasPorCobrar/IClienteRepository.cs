@@ -6,5 +6,6 @@ namespace MicroRabbit.Transfer.Domain.Interfaces.CuentasPorCobrar
     public interface IClienteRepository
     {
         void GrabarTabla(ClientesTabla clienteTabla);
+        void EditarTabla(ClientesTabla clienteTabla);
     }
 }

@@ -18,6 +18,6 @@ namespace MicroRabbit.Banking.Domain.Models.Inventario
         public DateTime? Fecha_ing { get; set; }
         public string? Maquina { get; set; }
         public int? Usuario { get; set; }
-        public string TipoPeticion { get; set; }
+        public string? TipoPeticion { get; set; }
     }
 }

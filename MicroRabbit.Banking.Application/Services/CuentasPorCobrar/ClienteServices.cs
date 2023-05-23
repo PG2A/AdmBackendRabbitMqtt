@@ -72,12 +72,10 @@ namespace MicroRabbit.Banking.Application.Services.CuentasPorCobrar
             cliente.Maquina,
             cliente.Usuario,
             cliente.Relacionado,
-            (bool)cliente.PrecioAlCosto,
-            (float)cliente.PorcentajeIncremento
-
-
-
-                );
+            cliente.PrecioAlCosto,
+            cliente.PorcentajeIncremento,
+            cliente.TipoPeticion
+            );
             _eventBus.SendCommand(createCLienteCommand);
         }
     }

@@ -92,8 +92,6 @@ builder.Services.AddTransient<IPersonaRepository, PersonaRepository>();
 builder.Services.AddTransient<IBancoCiaRepository, BancoCiaRepository>();
 builder.Services.AddTransient<INivel2Repository, Nivel2Repository>();
 builder.Services.AddTransient<INivel3Repository, Nivel3Repository>();
-
-
 builder.Services.AddTransient<IMotivosInventarioRepository, MotivosInventarioRepository>();
 builder.Services.AddTransient<TablasContext>();
 
@@ -113,8 +111,6 @@ builder.Services.AddTransient<PersonaEventHandler>();
 builder.Services.AddTransient<BancoCiaEventHandler>();
 builder.Services.AddTransient<Nivel2EventHandler>();
 builder.Services.AddTransient<Nivel3EventHandler>();
-
-
 builder.Services.AddTransient<MotivosInventarioEventHandler>();
 
 
@@ -133,8 +129,12 @@ var eventBus = app.Services.GetRequiredService<IEventBus>();
 eventBus.Subscribe<Nivel1CreateEvent, Nivel1EventHandler>();
 eventBus.Subscribe<ClienteCreateEvent, ClienteEventHandller>();
 eventBus.Subscribe<ProductoCreateEvent, ProductoEventHandler>();
-
-
+eventBus.Subscribe<CamionCreateEvent, CamionEventHandler>();
+eventBus.Subscribe<ChoferCreateEvent, ChoferEventHandler>();
+eventBus.Subscribe<PersonaCreateEvent, PersonaEventHandler>();
+eventBus.Subscribe<ProveedorCreateEvent, ProveedorEventHandler>();
+eventBus.Subscribe<BancoCiaCreateEvent, BancoCiaEventHandler>();
+eventBus.Subscribe<MotivosInventarioCreateEvent, MotivosInventarioEventHandler>();
 
 
 // Configure the HTTP request pipeline.

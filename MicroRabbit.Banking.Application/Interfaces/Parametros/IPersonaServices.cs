@@ -1,4 +1,4 @@
-﻿using MicroRabbit.Banking.Domain.Models.Parametros;
+﻿using MicroRabbit.Banking.Application.Models.Parametros;
 using System;
 using System.Collections.Generic;
 using System.Linq;

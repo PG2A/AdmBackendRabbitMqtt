@@ -1,5 +1,5 @@
 ﻿using MicroRabbit.Banking.Application.Interfaces.Parametros;
-using MicroRabbit.Banking.Domain.Models.Parametros;
+using MicroRabbit.Banking.Application.Models.Parametros;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MicroRabbit.Banking.Api.Controllers.Parametros
@@ -18,7 +18,7 @@ namespace MicroRabbit.Banking.Api.Controllers.Parametros
         [HttpPost]
         public IActionResult Post([FromBody] PersonaModel persona)
         {
-
+            persona.TipoPeticion = "POST";
             _personaServices.Enviar(persona);
             return Ok(persona);
         }
@@ -26,12 +26,14 @@ namespace MicroRabbit.Banking.Api.Controllers.Parametros
         [HttpPut("editar")]
         public IActionResult Put([FromBody] PersonaModel persona)
         {
+            persona.TipoPeticion = "PUT";
             _personaServices.Editar(persona);
             return Ok(persona);
         }
         [HttpDelete("eliminar")]
         public IActionResult Delete([FromBody] PersonaModel persona)
         {
+            persona.TipoPeticion = "DELETE";
             _personaServices.Eliminar(persona);
             return Ok(persona);
         }

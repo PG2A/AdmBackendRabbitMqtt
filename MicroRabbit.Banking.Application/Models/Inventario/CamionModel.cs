@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MicroRabbit.Banking.Application.Models.Inventario
+﻿namespace MicroRabbit.Banking.Application.Models.Inventario
 {
     public class CamionModel
     {
@@ -23,6 +17,6 @@ namespace MicroRabbit.Banking.Application.Models.Inventario
         public string? Maquina { get; set; }
         public int Usuario { get; set; }
         public int Sucursal { get; set; }
-        public string TipoPeticion { get; set; }
+        public string? TipoPeticion { get; set; }
     }
 }
