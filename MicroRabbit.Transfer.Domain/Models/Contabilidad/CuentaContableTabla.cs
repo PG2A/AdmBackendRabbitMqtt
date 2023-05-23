@@ -9,7 +9,6 @@ namespace MicroRabbit.Transfer.Domain.Models.Contabilidad
 {
     public class CuentaContableTabla
     {
-        [Key]
         public int Anio { get; set; }
         [Key]
         public string Cuenta { get; set; }

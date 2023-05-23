@@ -1,8 +1,5 @@
-﻿using MicroRabbit.Banking.Application.Interfaces;
-using MicroRabbit.Banking.Application.Interfaces.Inventario;
-using MicroRabbit.Banking.Application.Models;
+﻿using MicroRabbit.Banking.Application.Interfaces.Inventario;
 using MicroRabbit.Banking.Application.Models.Inventario;
-using MicroRabbit.Banking.Domain.Models.Parametros;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MicroRabbit.Banking.Api.Controllers.Inventario
@@ -20,18 +17,21 @@ namespace MicroRabbit.Banking.Api.Controllers.Inventario
         [HttpPost]
         public IActionResult Post([FromBody] ChoferModel chofer)
         {
+            chofer.TipoPeticion = "POST";
             _services.Transfer(chofer);
             return Ok(chofer);
         }
         [HttpPut("editar")]
         public IActionResult Put([FromBody] ChoferModel chofer)
         {
+            chofer.TipoPeticion = "PUT";
             _services.Editar(chofer);
             return Ok(chofer);
         }
         [HttpDelete("eliminar")]
         public IActionResult Delete([FromBody] ChoferModel chofer)
         {
+            chofer.TipoPeticion = "DELETE";
             _services.Eliminar(chofer);
             return Ok(chofer);
         }

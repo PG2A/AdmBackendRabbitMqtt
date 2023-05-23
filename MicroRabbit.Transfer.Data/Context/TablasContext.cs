@@ -28,11 +28,12 @@ namespace MicroRabbit.Transfer.Data.Context
         public DbSet<VenCabEgresoBodTabla> VEN_CABEGRESO_BOD { get; set; }
         public DbSet<VenDetEgresoBodTabla> VEN_DETEGRESO_BOD { get; set; }
         public DbSet<MotivosInventarioTabla> INV_MOTIVO_MOVIMIENTO { get; set; }
+        public DbSet<CuentaContableTabla> CNT_CUENTA_CONTABLE { get; set; }
 
-            //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-            //{
-            //    optionsBuilder.UseSqlServer("Data Source=192.168.0.70;Initial Catalog=BDADMEP;user id=BIROBID;password=IROBID20");
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseSqlServer("Data Source=192.168.0.70;Initial Catalog=BDADMEP;user id=BIROBID;password=IROBID20");
 
         //}
-        }
+    }
 }

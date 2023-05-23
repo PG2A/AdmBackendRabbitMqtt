@@ -27,7 +27,7 @@ namespace MicroRabbit.Transfer.Domain.EventHandlers.Inventario
                 {
                     Codigo = @event.Codigo,
                     Nombre = @event.Nombre,
-                    Cuenta = @event.Nombre,
+                    Cuenta = @event.Cuenta,
                     Estadistica = @event.Estadistica,
                     Sri = @event.Sri,
                     TipoDocInventario = @event.TipoDocInventario,
@@ -44,7 +44,7 @@ namespace MicroRabbit.Transfer.Domain.EventHandlers.Inventario
                 {
                     Codigo = @event.Codigo,
                     Nombre = @event.Nombre,
-                    Cuenta = @event.Nombre,
+                    Cuenta = @event.Cuenta,
                     Estadistica = @event.Estadistica,
                     Sri = @event.Sri,
                     TipoDocInventario = @event.TipoDocInventario,
@@ -61,7 +61,7 @@ namespace MicroRabbit.Transfer.Domain.EventHandlers.Inventario
                 {
                     Codigo = @event.Codigo,
                     Nombre = @event.Nombre,
-                    Cuenta = @event.Nombre,
+                    Cuenta = @event.Cuenta,
                     Estadistica = @event.Estadistica,
                     Sri = @event.Sri,
                     TipoDocInventario = @event.TipoDocInventario,

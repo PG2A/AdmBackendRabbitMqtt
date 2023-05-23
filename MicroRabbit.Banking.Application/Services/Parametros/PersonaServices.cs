@@ -2,7 +2,7 @@
 using MicroRabbit.Banking.Application.Interfaces.Parametros;
 using MicroRabbit.Banking.Domain.Commands.Contabilidad.BancoCia;
 using MicroRabbit.Banking.Domain.Commands.Parametros.Persona;
-using MicroRabbit.Banking.Domain.Models.Parametros;
+using MicroRabbit.Banking.Application.Models.Parametros;
 using MicroRabbit.Domain.Core.Bus;
 
 namespace MicroRabbit.Banking.Application.Services.Parametros

@@ -20,5 +20,10 @@ namespace MicroRabbit.Transfer.Data.Repository.CuentasPorCobrar
             _tablasContext.Add(clienteTabla);
             _tablasContext.SaveChanges();
         }
+        public void EditarTabla(ClientesTabla clienteTabla)
+        {
+            _tablasContext.Update(clienteTabla);
+            _tablasContext.SaveChanges();
+        }
     }
 }

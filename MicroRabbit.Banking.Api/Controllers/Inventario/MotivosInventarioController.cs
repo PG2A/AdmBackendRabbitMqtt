@@ -17,19 +17,21 @@ namespace MicroRabbit.Banking.Api.Controllers.Inventario
         [HttpPost]
         public IActionResult Post([FromBody] MotivosInventarioModel motivosinv)
         {
-
+            motivosinv.TipoPeticion = "POST";
             _motivosinv.Grabar(motivosinv);
             return Ok(motivosinv);
         }
         [HttpPut("editar")]
         public IActionResult Put([FromBody] MotivosInventarioModel motivosinv)
         {
+            motivosinv.TipoPeticion = "PUT";
             _motivosinv.Grabar(motivosinv);
             return Ok(motivosinv);
         }
         [HttpDelete("eliminar")]
         public IActionResult Delete([FromBody] MotivosInventarioModel motivosinv)
         {
+            motivosinv.TipoPeticion = "DELETE";
             _motivosinv.Grabar(motivosinv);
             return Ok(motivosinv);
         }
