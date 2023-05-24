@@ -1,5 +1,6 @@
 ﻿using MicroRabbit.Banking.Application.Interfaces.Contabilidad;
 using MicroRabbit.Banking.Application.Models.Contabilidad;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MicroRabbit.Banking.Api.Controllers.Contabilidad
@@ -14,6 +15,7 @@ namespace MicroRabbit.Banking.Api.Controllers.Contabilidad
         {
             _bancociaServices = bancociaServices;
         }
+        [EnableCors]
         [HttpPost]
         public IActionResult Post([FromBody] BancoCiaModel bancocia)
         {
@@ -21,14 +23,14 @@ namespace MicroRabbit.Banking.Api.Controllers.Contabilidad
             _bancociaServices.Enviar(bancocia);
             return Ok(bancocia);
         }
-        [HttpPut("editar")]
+        [HttpPost("editar")]
         public IActionResult Put([FromBody] BancoCiaModel bancocia)
         {
             bancocia.TipoPeticion = "PUT";
             _bancociaServices.Editar(bancocia);
             return Ok(bancocia);
         }
-        [HttpDelete("eliminar")]
+        [HttpPost("eliminar")]
         public IActionResult Delete([FromBody] BancoCiaModel bancocia)
         {
             bancocia.TipoPeticion = "DELETE";

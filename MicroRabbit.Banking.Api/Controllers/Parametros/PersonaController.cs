@@ -1,5 +1,6 @@
 ﻿using MicroRabbit.Banking.Application.Interfaces.Parametros;
 using MicroRabbit.Banking.Application.Models.Parametros;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MicroRabbit.Banking.Api.Controllers.Parametros
@@ -14,7 +15,7 @@ namespace MicroRabbit.Banking.Api.Controllers.Parametros
         {
             _personaServices = personaServices;
         }
-
+        [EnableCors]
         [HttpPost]
         public IActionResult Post([FromBody] PersonaModel persona)
         {
@@ -22,8 +23,7 @@ namespace MicroRabbit.Banking.Api.Controllers.Parametros
             _personaServices.Enviar(persona);
             return Ok(persona);
         }
-
-        [HttpPut("editar")]
+        [HttpPost("editar")]
         public IActionResult Put([FromBody] PersonaModel persona)
         {
             persona.TipoPeticion = "PUT";

@@ -1,5 +1,6 @@
 ﻿using MicroRabbit.Banking.Application.Interfaces.Inventario;
 using MicroRabbit.Banking.Application.Models.Inventario;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MicroRabbit.Banking.Api.Controllers.Inventario
@@ -14,6 +15,7 @@ namespace MicroRabbit.Banking.Api.Controllers.Inventario
         {
             _services = services;
         }
+        [EnableCors]
         [HttpPost]
         public IActionResult Post([FromBody] ChoferModel chofer)
         {
@@ -21,14 +23,14 @@ namespace MicroRabbit.Banking.Api.Controllers.Inventario
             _services.Transfer(chofer);
             return Ok(chofer);
         }
-        [HttpPut("editar")]
+        [HttpPost("editar")]
         public IActionResult Put([FromBody] ChoferModel chofer)
         {
             chofer.TipoPeticion = "PUT";
             _services.Editar(chofer);
             return Ok(chofer);
         }
-        [HttpDelete("eliminar")]
+        [HttpPost("eliminar")]
         public IActionResult Delete([FromBody] ChoferModel chofer)
         {
             chofer.TipoPeticion = "DELETE";

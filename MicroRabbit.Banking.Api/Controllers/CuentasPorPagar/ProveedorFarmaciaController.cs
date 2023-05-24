@@ -1,5 +1,6 @@
 ﻿using MicroRabbit.Banking.Application.Interfaces.CuentasPorPagar;
 using MicroRabbit.Banking.Application.Models.CuentasPorPagar;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using System;
 
@@ -15,6 +16,7 @@ namespace MicroRabbit.Banking.Api.Controllers.CuentasPorPagar
         {
             _services = services;
         }
+        [EnableCors]
         [HttpPost]
         public IActionResult Post([FromBody] ProveedorFarmaciaModel proveedor)
         {
@@ -22,7 +24,7 @@ namespace MicroRabbit.Banking.Api.Controllers.CuentasPorPagar
             _services.Enviar(proveedor);
             return Ok(proveedor);
         }
-        [HttpPut("editar")]
+        [HttpPost("editar")]
         public IActionResult Put([FromBody] ProveedorFarmaciaModel proveedor)
         {
             proveedor.TipoPeticion = "PUT";

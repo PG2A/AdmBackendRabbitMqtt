@@ -70,6 +70,7 @@ builder.Services.AddTransient<IBancoCiaServices, BancoCiaServices>();
 builder.Services.AddTransient<IMotivosInventarioServices, MotivosInventarioServices>();
 builder.Services.AddTransient<INivel2Services, Nivel2Services>();
 builder.Services.AddTransient<INivel3Services, NIvel3Services>();
+builder.Services.AddTransient<ICuentaContableServices, CuentaContableServices>();
 builder.Services.AddTransient<IEventHandler<Nivel1CreateEvent>, Nivel1EventHandler>();
 builder.Services.AddTransient<IEventHandler<ProductoCreateEvent>, ProductoEventHandler>();
 builder.Services.AddTransient<IEventHandler<PersonaCreateEvent>, PersonaEventHandler>();
@@ -81,6 +82,7 @@ builder.Services.AddTransient<IEventHandler<MotivosInventarioCreateEvent>, Motiv
 builder.Services.AddTransient<Nivel1DbContext>();
 builder.Services.AddTransient<IEventHandler<Nivel2CreateEvent>, Nivel2EventHandler>();
 builder.Services.AddTransient<IEventHandler<Nivel3CreateEvent>, Nivel3EventHandler>();
+builder.Services.AddTransient<IEventHandler<CuentaContableCreateEvent>, CuentaContableEventHandler>();
 
 builder.Services.AddTransient<INivelRepository, Nivel1Repository>();
 builder.Services.AddTransient<IClienteRepository, ClienteRepository>();
@@ -92,6 +94,7 @@ builder.Services.AddTransient<IPersonaRepository, PersonaRepository>();
 builder.Services.AddTransient<IBancoCiaRepository, BancoCiaRepository>();
 builder.Services.AddTransient<INivel2Repository, Nivel2Repository>();
 builder.Services.AddTransient<INivel3Repository, Nivel3Repository>();
+builder.Services.AddTransient<ICuentaContableRepository, CuentaContableRepository>();
 builder.Services.AddTransient<IMotivosInventarioRepository, MotivosInventarioRepository>();
 builder.Services.AddTransient<TablasContext>();
 
@@ -112,6 +115,7 @@ builder.Services.AddTransient<BancoCiaEventHandler>();
 builder.Services.AddTransient<Nivel2EventHandler>();
 builder.Services.AddTransient<Nivel3EventHandler>();
 builder.Services.AddTransient<MotivosInventarioEventHandler>();
+builder.Services.AddTransient<CuentaContableEventHandler>();
 
 
 
@@ -135,6 +139,7 @@ eventBus.Subscribe<PersonaCreateEvent, PersonaEventHandler>();
 eventBus.Subscribe<ProveedorCreateEvent, ProveedorEventHandler>();
 eventBus.Subscribe<BancoCiaCreateEvent, BancoCiaEventHandler>();
 eventBus.Subscribe<MotivosInventarioCreateEvent, MotivosInventarioEventHandler>();
+eventBus.Subscribe<CuentaContableCreateEvent, CuentaContableEventHandler>();
 
 
 // Configure the HTTP request pipeline.

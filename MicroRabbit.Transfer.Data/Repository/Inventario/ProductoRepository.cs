@@ -17,5 +17,10 @@ namespace MicroRabbit.Transfer.Data.Repository.Inventario
             _tablasContext.Add(productos);
             _tablasContext.SaveChanges();
         }
+        public void EditarProducto(ProductosTabla productos)
+        {
+            _tablasContext.Update(productos);
+            _tablasContext.SaveChanges();
+        }
     }
 }
