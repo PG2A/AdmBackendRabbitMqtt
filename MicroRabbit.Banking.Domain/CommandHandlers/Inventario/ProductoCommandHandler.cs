@@ -69,7 +69,8 @@ namespace MicroRabbit.Banking.Domain.CommandHandlers.Inventario
                 request.StockPorBodega,
                 request.Precio,
                 request.StockGeneral,
-                request.StockMatriz
+                request.StockMatriz, 
+                request.TipoPeticion
                 ));
             return Task.FromResult(true);
         }

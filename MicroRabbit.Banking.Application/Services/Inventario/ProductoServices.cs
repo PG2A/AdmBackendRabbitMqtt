@@ -69,7 +69,8 @@ namespace MicroRabbit.Banking.Application.Services.Inventario
                 producto.StockPorBodega,
                 producto.Precio,
                 producto.StockGeneral,
-                producto.StockMatriz
+                producto.StockMatriz,
+                producto.TipoPeticion
                 );
             _eventBus.SendCommand(createProductoCommand);
         }

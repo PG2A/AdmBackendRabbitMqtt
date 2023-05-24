@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MicroRabbit.Banking.Domain.Models.Contabilidad
+namespace MicroRabbit.Banking.Application.Models.Contabilidad
 {
     public class CuentaContableModel
     {

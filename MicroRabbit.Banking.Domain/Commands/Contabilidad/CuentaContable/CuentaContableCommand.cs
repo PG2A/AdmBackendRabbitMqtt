@@ -1,12 +1,13 @@
-﻿using System;
+﻿using MicroRabbit.Domain.Core.Commands;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MicroRabbit.Banking.Domain.Models.Contabilidad
+namespace MicroRabbit.Banking.Domain.Commands.Contabilidad.CuentaContable
 {
-    public class CuentaContableModel
+    public class CuentaContableCommand : Command
     {
         public int Anio { get; set; }
         public string Cuenta { get; set; }
@@ -62,6 +63,6 @@ namespace MicroRabbit.Banking.Domain.Models.Contabilidad
         public DateTime? Fecha_Ingreso { get; set; }
         public string? Maquina { get; set; }
         public int? Usuario { get; set; }
-        public string? TipoPeticion { get; set; }
+        public string TipoPeticion { get; set; }
     }
 }

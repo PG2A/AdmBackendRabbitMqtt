@@ -23,8 +23,7 @@ namespace MicroRabbit.Banking.Api.Controllers.CuentasPorCobrar
             _clienteServices.Enviar(cliente);
             return Ok(cliente);
         }
-        [EnableCors]
-        [HttpPut("editar")]
+        [HttpPost("editar")]
         public IActionResult Put([FromBody] ClienteModel cliente)
         {
             cliente.TipoPeticion = "PUT";

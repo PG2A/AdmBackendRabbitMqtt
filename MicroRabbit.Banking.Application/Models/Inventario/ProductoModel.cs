@@ -57,5 +57,6 @@ namespace MicroRabbit.Banking.Application.Models.Inventario
         public double? Precio { get; set; }
         public double? StockGeneral { get; set; }
         public float? StockMatriz { get; set; }
+        public string? TipoPeticion { get; set; }
     }
 }

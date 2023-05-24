@@ -1,5 +1,6 @@
 ﻿using MicroRabbit.Banking.Application.Interfaces.Inventario;
 using MicroRabbit.Banking.Application.Models.Inventario;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MicroRabbit.Banking.Api.Controllers.Inventario
@@ -14,6 +15,7 @@ namespace MicroRabbit.Banking.Api.Controllers.Inventario
         {
             _motivosinv = motivosinv;
         }
+        [EnableCors]
         [HttpPost]
         public IActionResult Post([FromBody] MotivosInventarioModel motivosinv)
         {
@@ -21,14 +23,14 @@ namespace MicroRabbit.Banking.Api.Controllers.Inventario
             _motivosinv.Grabar(motivosinv);
             return Ok(motivosinv);
         }
-        [HttpPut("editar")]
+        [HttpPost("editar")]
         public IActionResult Put([FromBody] MotivosInventarioModel motivosinv)
         {
             motivosinv.TipoPeticion = "PUT";
             _motivosinv.Grabar(motivosinv);
             return Ok(motivosinv);
         }
-        [HttpDelete("eliminar")]
+        [HttpPost("eliminar")]
         public IActionResult Delete([FromBody] MotivosInventarioModel motivosinv)
         {
             motivosinv.TipoPeticion = "DELETE";
