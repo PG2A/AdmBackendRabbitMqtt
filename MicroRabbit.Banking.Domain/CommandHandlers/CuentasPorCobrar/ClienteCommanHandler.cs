@@ -10,18 +10,18 @@ namespace MicroRabbit.Banking.Domain.CommandHandlers.CuentasPorCobrar
     public class ClienteCommanHandler : IRequestHandler<CreateClienteCommand, bool>
     {
         private readonly IEventBus _eventBus;
-        private ISucursalRepository _sucursalRepository;
+        //private ISucursalRepository _sucursalRepository;
 
-        //public ClienteCommanHandler(IEventBus eventBus, ISucursalRepository sucursalRepository) : this(eventBus)
-        //{
-        //    _sucursalRepository = sucursalRepository;
-        //}
-
-        public ClienteCommanHandler(IEventBus eventBus, ISucursalRepository sucursalRepository)
+        public ClienteCommanHandler(IEventBus eventBus) 
         {
             _eventBus = eventBus;
-            _sucursalRepository = sucursalRepository;
         }
+
+        //public ClienteCommanHandler(IEventBus eventBus, ISucursalRepository sucursalRepository)
+        //{
+        //    _eventBus = eventBus;
+        //    _sucursalRepository = sucursalRepository;
+        //}
 
         public Task<bool> Handle(CreateClienteCommand request, CancellationToken cancellationToken)
         {

@@ -43,10 +43,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<TablasContext>(options =>
-{
-    options.UseSqlServer(builder.Configuration.GetConnectionString("BankingDbConnection"));
-});
+//builder.Services.AddDbContext<TablasContext>(options =>
+//{
+//    options.UseSqlServer(builder.Configuration.GetConnectionString("BankingDbConnection"));
+//});
 
 
 builder.Services.Configure<RabbitMQSettings>(builder.Configuration.GetSection("RabbitMQSettings"));
