@@ -31,7 +31,8 @@ using MicroRabbit.Banking.Domain.Commands.Parametros.Persona;
 using MicroRabbit.Banking.Domain.Commands.Contabilidad.CuentaContable;
 using MicroRabbit.Infra.Bus;
 using MicroRabbit.Infra.IoC;
-
+using MicroRabbit.Banking.Data.Context;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -42,10 +43,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-//builder.Services.AddDbContext<BankingDbContext>(options =>
-//{
-//    options.UseSqlServer(builder.Configuration.GetConnectionString("BankingDbConnection"));
-//});
+builder.Services.AddDbContext<TablasContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("BankingDbConnection"));
+});
 
 
 builder.Services.Configure<RabbitMQSettings>(builder.Configuration.GetSection("RabbitMQSettings"));
