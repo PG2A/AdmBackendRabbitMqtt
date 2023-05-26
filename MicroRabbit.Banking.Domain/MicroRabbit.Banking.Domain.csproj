@@ -14,7 +14,6 @@
     <Folder Include="EventHandlers\" />
     <Folder Include="Events\PosPuntoVenta\" />
     <Folder Include="Events\Ventas\" />
-    <Folder Include="Interfaces\" />
     <Folder Include="Models\PosPuntoVenta\" />
     <Folder Include="Models\Ventas\" />
   </ItemGroup>

@@ -35,7 +35,7 @@ namespace MicroRabbit.Transfer.Domain.EventHandlers.Inventario
                 };
                 _camionRepository.Grabar(grabar);
             }
-            else if (@event.TipoPeticion == "PUT")
+            if (@event.TipoPeticion == "PUT")
             {
                 var editar = new CamionTabla
                 {
@@ -52,26 +52,7 @@ namespace MicroRabbit.Transfer.Domain.EventHandlers.Inventario
                     Usuario = @event.Usuario,
                     Sucursal = @event.Sucursal,
                 };
-                _camionRepository.Grabar(editar);
-            }
-            else if (@event.TipoPeticion == "DELETE")
-            {
-                var eliminar = new CamionTabla
-                {
-                    Codigo = @event.Codigo,
-                    //Nombre = @event.Nombre,
-                    //Placa = @event.Placa,
-                    //Volumen = @event.Volumen,
-                    //Anio = @event.Anio,
-                    //Peso = @event.Peso,
-                    //Chofer = @event.Chofer,
-                    //Estado = @event.Estado,
-                    //Fecha_Ingreso = @event.Fecha_Ingreso,
-                    //Maquina = @event.Maquina,
-                    //Usuario = @event.Usuario,
-                    //Sucursal = @event.Sucursal,
-                };
-                _camionRepository.Grabar(eliminar);
+                _camionRepository.Editar(editar);
             }
             return Task.CompletedTask;
         }
