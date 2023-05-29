@@ -29,6 +29,7 @@ namespace MicroRabbit.Transfer.Data.Context
         public DbSet<VenDetEgresoBodTabla> VEN_DETEGRESO_BOD { get; set; }
         public DbSet<MotivosInventarioTabla> INV_MOTIVO_MOVIMIENTO { get; set; }
         public DbSet<CuentaContableTabla> CNT_CUENTA_CONTABLE { get; set; }
+        public DbSet<PrecioTabla> ADM_PRECIO { get; set; }
 
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{
