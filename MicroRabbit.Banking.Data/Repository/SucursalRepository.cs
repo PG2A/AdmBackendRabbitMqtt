@@ -14,16 +14,12 @@ namespace MicroRabbit.Banking.Data.Repository
             _tablas = tablas;
         }
 
-        //public void Listar()
-        //{
-        //    var lista =_tablas.ADM_SUCURSAL.ToList();
-        //    Console.WriteLine(lista);
-        //}
+        public List<SucursalModel> Listar()
+        {
+            dynamic lista = _tablas.ADM_SUCURSAL.ToList();
+            return lista;
+        }   
 
-        //List<SucursalModel> ISucursalRepository.Listar()
-        //{
-        //    var lista = _tablas.ADM_SUCURSAL.ToList();
-        //    return lista;
-        //}
+     
     }
 }

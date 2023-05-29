@@ -34,6 +34,9 @@ using MicroRabbit.Infra.IoC;
 using MicroRabbit.Banking.Data.Context;
 using Microsoft.EntityFrameworkCore;
 
+using MicroRabbit.Banking.Domain.Interfaces;
+using MicroRabbit.Banking.Data.Repository;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -43,10 +46,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-//builder.Services.AddDbContext<TablasContext>(options =>
-//{
-//    options.UseSqlServer(builder.Configuration.GetConnectionString("BankingDbConnection"));
-//});
+builder.Services.AddDbContext<TablasContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("BankingDbConnection"));
+});
 
 
 builder.Services.Configure<RabbitMQSettings>(builder.Configuration.GetSection("RabbitMQSettings"));
@@ -66,6 +69,8 @@ builder.Services.AddTransient<IPersonaServices, PersonaServices>();
 builder.Services.AddTransient<IBancoCiaServices, BancoCiaServices>();
 builder.Services.AddTransient<IMotivosInventarioServices, MotivosInventarioServices>();
 builder.Services.AddTransient<ICuentaContableServices, CuentaContableServices>();
+builder.Services.AddTransient<ISucursalRepository, SucursalRepository>();
+
 
 
 
