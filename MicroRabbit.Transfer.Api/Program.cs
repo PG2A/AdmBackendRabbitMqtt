@@ -71,6 +71,7 @@ builder.Services.AddTransient<IMotivosInventarioServices, MotivosInventarioServi
 builder.Services.AddTransient<INivel2Services, Nivel2Services>();
 builder.Services.AddTransient<INivel3Services, NIvel3Services>();
 builder.Services.AddTransient<ICuentaContableServices, CuentaContableServices>();
+builder.Services.AddTransient<IPrecioServices, PrecioServices>();
 builder.Services.AddTransient<IEventHandler<Nivel1CreateEvent>, Nivel1EventHandler>();
 builder.Services.AddTransient<IEventHandler<ProductoCreateEvent>, ProductoEventHandler>();
 builder.Services.AddTransient<IEventHandler<PersonaCreateEvent>, PersonaEventHandler>();
@@ -83,6 +84,7 @@ builder.Services.AddTransient<Nivel1DbContext>();
 builder.Services.AddTransient<IEventHandler<Nivel2CreateEvent>, Nivel2EventHandler>();
 builder.Services.AddTransient<IEventHandler<Nivel3CreateEvent>, Nivel3EventHandler>();
 builder.Services.AddTransient<IEventHandler<CuentaContableCreateEvent>, CuentaContableEventHandler>();
+builder.Services.AddTransient<IEventHandler<PrecioCreateEvent>, PrecioEventHandler>();
 
 builder.Services.AddTransient<INivelRepository, Nivel1Repository>();
 builder.Services.AddTransient<IClienteRepository, ClienteRepository>();
@@ -96,6 +98,7 @@ builder.Services.AddTransient<INivel2Repository, Nivel2Repository>();
 builder.Services.AddTransient<INivel3Repository, Nivel3Repository>();
 builder.Services.AddTransient<ICuentaContableRepository, CuentaContableRepository>();
 builder.Services.AddTransient<IMotivosInventarioRepository, MotivosInventarioRepository>();
+builder.Services.AddTransient<IPrecioRepository, PrecioRepository>();
 builder.Services.AddTransient<TablasContext>();
 
 
@@ -116,6 +119,7 @@ builder.Services.AddTransient<Nivel2EventHandler>();
 builder.Services.AddTransient<Nivel3EventHandler>();
 builder.Services.AddTransient<MotivosInventarioEventHandler>();
 builder.Services.AddTransient<CuentaContableEventHandler>();
+builder.Services.AddTransient<PrecioEventHandler>();
 
 
 
@@ -140,6 +144,7 @@ eventBus.Subscribe<ProveedorCreateEvent, ProveedorEventHandler>();
 eventBus.Subscribe<BancoCiaCreateEvent, BancoCiaEventHandler>();
 eventBus.Subscribe<MotivosInventarioCreateEvent, MotivosInventarioEventHandler>();
 eventBus.Subscribe<CuentaContableCreateEvent, CuentaContableEventHandler>();
+eventBus.Subscribe<PrecioCreateEvent, PrecioEventHandler>();
 
 
 // Configure the HTTP request pipeline.
