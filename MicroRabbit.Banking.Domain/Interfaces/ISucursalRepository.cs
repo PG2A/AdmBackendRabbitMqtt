@@ -6,6 +6,6 @@ namespace MicroRabbit.Banking.Domain.Interfaces
 {
     public interface ISucursalRepository
     {
-        //List<SucursalModel> Listar();
+        List<SucursalModel> Listar();
     }
 }

@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using MicroRabbit.Banking.Domain.Commands.Parametros.Precio;
 using MicroRabbit.Banking.Domain.Events.Parametros;
+using MicroRabbit.Banking.Domain.Interfaces;
 using MicroRabbit.Domain.Core.Bus;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,7 @@ namespace MicroRabbit.Banking.Domain.CommandHandlers.Parametros
     public class PrecioCommandHandler : IRequestHandler<CreatePrecioCommand, bool>
     {
         private readonly IEventBus _eventBus;
+        
 
         public PrecioCommandHandler(IEventBus eventBus)
         {

@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using MicroRabbit.Banking.Domain.Commands;
 using MicroRabbit.Banking.Domain.Events;
+using MicroRabbit.Banking.Domain.Interfaces;
 using MicroRabbit.Domain.Core.Bus;
 
 
@@ -8,11 +9,13 @@ namespace MicroRabbit.Banking.Domain.CommandHandlers
 {
     public class Nivel1CommandHandler : IRequestHandler<CreateNivel1Command, bool>
     {
-        private readonly IEventBus _eventBus;
+        private readonly IEventBus _eventBus; 
+        private ISucursalRepository _sucursalRepository;
 
-        public Nivel1CommandHandler(IEventBus eventBus)
+        public Nivel1CommandHandler(IEventBus eventBus, ISucursalRepository sucursalRepository)
         {
-            _eventBus = eventBus;
+            _eventBus = eventBus; 
+            _sucursalRepository = sucursalRepository;
         }
 
         public Task<bool> Handle(CreateNivel1Command request, CancellationToken cancellationToken)

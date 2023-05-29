@@ -3,7 +3,7 @@ namespace MicroRabbit.Banking.Domain.Commands.CuentasPorCobrar.Cliente
 {
     public class CreateClienteCommand : ClienteCommand
     {
-        public CreateClienteCommand(string? codigo, string? codigo_Cliente, int? sucursal, string? razon_Social, string? negocio, string? representante, DateTime? fecha_Nacimiento, string? tipodoc, string? ruc, string? direccion, string? referencia, string? celular, string? telefono, int? tipo_Contribuyente, string? correo, string? provincia, string? canton, string? parroquia, string? sector, string? zona, string? categoria, string? tipo_Cliente, string? tipo_Negocio, string? medio_Pago, string? ruta_Entrega, DateTime? fecha_Ingreso, DateTime? fecha_Ultimacompra, bool? dvlu, bool? dvma, bool? dvmi, bool? dvju, bool? dvvi, bool? dvsa, bool? dvdo, string? frecuencia, int? orden, int? vendedor, int? vendedor_Aux, int? dias_Credito, bool? credito, float? cupo, float? extra_Cupo, bool? estado, string? clavefe, string? sexo, string? estado_Civil, string? maquina, int? usuario, bool? relacionado, bool? precioAlCosto, float? porcentajeIncremento, string? tipopeticion)
+        public CreateClienteCommand(string? codigo, string? codigo_Cliente, int? sucursal, string? razon_Social, string? negocio, string? representante, DateTime? fecha_Nacimiento, string? tipodoc, string? ruc, string? direccion, string? referencia, string? celular, string? telefono, int? tipo_Contribuyente, string? correo, string? provincia, string? canton, string? parroquia, string? sector, string? zona, string? categoria, string? tipo_Cliente, string? tipo_Negocio, string? medio_Pago, string? ruta_Entrega, DateTime? fecha_Ingreso, DateTime? fecha_Ultimacompra, bool? dvlu, bool? dvma, bool? dvmi, bool? dvju, bool? dvvi, bool? dvsa, bool? dvdo, string? frecuencia, int? orden, int? vendedor, int? vendedor_Aux, int? dias_Credito, bool? credito, float? cupo, float? extra_Cupo, bool? estado, string? clavefe, string? sexo, string? estado_Civil, string? maquina, int? usuario, bool? relacionado, bool? precioAlCosto, float? porcentajeIncremento, string? tipopeticion, int? todasSucursales)
         {
             Codigo = codigo;
             Codigo_Cliente = codigo_Cliente;
@@ -57,6 +57,7 @@ namespace MicroRabbit.Banking.Domain.Commands.CuentasPorCobrar.Cliente
             PrecioAlCosto = precioAlCosto;
             PorcentajeIncremento = porcentajeIncremento;
             TipoPeticion = tipopeticion;
+            TodasSucursales = todasSucursales;
         }
     }
 }

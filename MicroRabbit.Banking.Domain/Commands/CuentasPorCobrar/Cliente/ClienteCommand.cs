@@ -1,10 +1,18 @@
-﻿using MicroRabbit.Domain.Core.Commands;
+﻿using MicroRabbit.Banking.Domain.Interfaces;
+using MicroRabbit.Domain.Core.Commands;
 
 
 namespace MicroRabbit.Banking.Domain.Commands.CuentasPorCobrar.Cliente
 {
     public class ClienteCommand : Command
     {
+        //private readonly ISucursalRepository _sucursal;
+
+        //public ClienteCommand(ISucursalRepository sucursal)
+        //{
+        //    _sucursal = sucursal;
+        //}
+
         public string? Codigo { get; set; }
         public string? Codigo_Cliente { get; set; }
         public int? Sucursal { get; set; }
@@ -57,5 +65,6 @@ namespace MicroRabbit.Banking.Domain.Commands.CuentasPorCobrar.Cliente
         public bool? PrecioAlCosto { get; set; }
         public float? PorcentajeIncremento { get; set; }
         public string? TipoPeticion { get; set; }
+        public int? TodasSucursales { get; set; }
     }
 }

@@ -32,6 +32,10 @@ using MicroRabbit.Banking.Domain.Commands.Contabilidad.CuentaContable;
 using MicroRabbit.Infra.Bus;
 using MicroRabbit.Infra.IoC;
 using MicroRabbit.Banking.Domain.Commands.Parametros.Precio;
+using MicroRabbit.Banking.Domain.Interfaces;
+using MicroRabbit.Banking.Data.Repository;
+using MicroRabbit.Banking.Data.Context;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -42,14 +46,18 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-//builder.Services.AddDbContext<TablasContext>(options =>
-//{
-//    options.UseSqlServer(builder.Configuration.GetConnectionString("BankingDbConnection"));
-//});
+builder.Services.AddDbContext<TablasContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("BankingDbConnection"));
+});
 
 
 builder.Services.Configure<RabbitMQSettings>(builder.Configuration.GetSection("RabbitMQSettings"));
 builder.Services.RegisterServices(builder.Configuration);
+
+//builder.Services.AddTransient<TablasContext>();
+
+builder.Services.AddTransient<ISucursalRepository, SucursalRepository>();
 
 
 builder.Services.AddTransient<INivel1Services, Nivel1Services>();
@@ -66,6 +74,7 @@ builder.Services.AddTransient<IBancoCiaServices, BancoCiaServices>();
 builder.Services.AddTransient<IMotivosInventarioServices, MotivosInventarioServices>();
 builder.Services.AddTransient<ICuentaContableServices, CuentaContableServices>();
 builder.Services.AddTransient<IPrecioServices, PrecioServices>();
+builder.Services.AddTransient<ISucursalServices, SucursalServices>();
 
 
 
@@ -83,9 +92,6 @@ builder.Services.AddTransient<IRequestHandler<CreateBancoCiaCommand, bool>, Banc
 builder.Services.AddTransient<IRequestHandler<CreateMotivosInventarioCommand, bool>, MotivosInventarioCommandHandler>();
 builder.Services.AddTransient<IRequestHandler<CreateCuentaContableCommand, bool>, CuentaContableCommandHandler>();
 builder.Services.AddTransient<IRequestHandler<CreatePrecioCommand, bool>, PrecioCommandHandler>();
-
-
-
 
 
 
