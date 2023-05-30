@@ -17,34 +17,24 @@ namespace MicroRabbit.Transfer.Data.Repository.Inventario
             _tablasContext = tablasContext;
         }
 
-        //public ProductoRepository(TablasContext tablasContext, IBodegaRepository bodega, IProductoBodegaRepository productobodega)
-        //{
-        //    _tablasContext = tablasContext;
-        //    Bodega = bodega;
-        //    ProductoBodega = productobodega;
-        //}
-
         public void GrabarProducto(ProductosTabla productos)
         {
-            _tablasContext.Add(productos);
-            //var lista = Bodega.ObtenerRegistros();
-            //foreach (var item in lista)
-            //{
-            //    var codigoBodega = lista.Where(x => x.Codigo_Bodega == item.Codigo_Bodega).ToList();
-            //    var model = new InvProductoBodegaTabla
-            //    {
-            //        Bodega = codigoBodega.FirstOrDefault().Codigo,
-            //        Producto = item.Codigo,
-            //        Stock = 0,
-            //    };
-            //    ProductoBodega.Grabar(model);
-            //}
-            _tablasContext.SaveChanges();
+            var model = Obtener(productos.Codigo);
+            if (model == null)
+            {
+                _tablasContext.Add(productos);
+                _tablasContext.SaveChanges();
+            }
         }
         public void EditarProducto(ProductosTabla productos)
         {
             _tablasContext.Update(productos);
             _tablasContext.SaveChanges();
+        }
+
+        public ProductosTabla Obtener(int codigo)
+        {
+            return _tablasContext.INV_PRODUCTO.Find(codigo);
         }
     }
 }

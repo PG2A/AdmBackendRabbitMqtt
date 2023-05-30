@@ -7,5 +7,6 @@ namespace MicroRabbit.Transfer.Domain.Interfaces.Inventario
     {
         void GrabarProducto(ProductosTabla productos);
         void EditarProducto(ProductosTabla productos);
+        ProductosTabla Obtener(int codigo);
     }
 }
