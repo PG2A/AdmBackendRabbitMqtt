@@ -3,7 +3,7 @@ namespace MicroRabbit.Banking.Domain.Commands.Inventario.Producto
 {
     public class CreateProductoCommand : ProductoCommand
     {
-        public CreateProductoCommand(int? codigo, string codigo_Producto, int sucursal, string codigo_Barra, string codigo_Barra2, string nombre, string nombre_Extra, string marca, string presentacion, string nivel1, string nivel2, string nivel3, int proveedor, int factor, bool pagaiva, decimal poriva, bool dispoventa, bool regalo, bool combo, char bien, bool estado, decimal costou, decimal costop, decimal pvp, string principio_Activo, string laboratorio, string observacion, DateTime? fecha_Ingreso, string maquina, int usuario, string? nivel1_Nombre, string? nivel2_Nombre, string? nivel3_Nombre, string? nombremarca, string? nombre_Proveedor, string? nombre_Presentacion, string? cuenta, float? pvf, float porDes, string claseTerapeuta, string nombreClaseTerapeuta, bool controlLote, bool soloReceta, bool traContinuo, bool psicotropico, string? regSanitario, string? concentracion, string? formaFarmaceutica, string? presentacionFarmacion, float? stockPorBodega, double? precio, double? stockGeneral, float? stockMatriz, string tipopeticion)
+        public CreateProductoCommand(int? codigo, string codigo_Producto, int sucursal, string codigo_Barra, string codigo_Barra2, string nombre, string nombre_Extra, string marca, string presentacion, string nivel1, string nivel2, string nivel3, int proveedor, int factor, bool pagaiva, decimal poriva, bool dispoventa, bool regalo, bool combo, char bien, bool estado, decimal costou, decimal costop, decimal pvp, string principio_Activo, string laboratorio, string observacion, DateTime? fecha_Ingreso, string maquina, int usuario, string? nivel1_Nombre, string? nivel2_Nombre, string? nivel3_Nombre, string? nombremarca, string? nombre_Proveedor, string? nombre_Presentacion, string? cuenta, float? pvf, float porDes, string claseTerapeuta, string nombreClaseTerapeuta, bool controlLote, bool soloReceta, bool traContinuo, bool psicotropico, string? regSanitario, string? concentracion, string? formaFarmaceutica, string? presentacionFarmacion, float? stockPorBodega, double? precio, double? stockGeneral, float? stockMatriz, string tipopeticion, int? todasSucursales)
         {
             Codigo = codigo;
             Codigo_Producto = codigo_Producto;
@@ -59,6 +59,7 @@ namespace MicroRabbit.Banking.Domain.Commands.Inventario.Producto
             StockGeneral = stockGeneral;
             StockMatriz = stockMatriz;
             TipoPeticion = tipopeticion;
+            TodasSucursales = todasSucursales;
         }
     }
 }
