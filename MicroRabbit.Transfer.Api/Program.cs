@@ -85,6 +85,8 @@ builder.Services.AddTransient<IEventHandler<Nivel2CreateEvent>, Nivel2EventHandl
 builder.Services.AddTransient<IEventHandler<Nivel3CreateEvent>, Nivel3EventHandler>();
 builder.Services.AddTransient<IEventHandler<CuentaContableCreateEvent>, CuentaContableEventHandler>();
 builder.Services.AddTransient<IEventHandler<PrecioCreateEvent>, PrecioEventHandler>();
+builder.Services.AddTransient<IEventHandler<BodegaCreateEvent>, BodegaEventHandler>();
+builder.Services.AddTransient<IEventHandler<ProductoBodegaCreateEvent>, ProductoBodegaEventHandler>();
 
 builder.Services.AddTransient<INivelRepository, Nivel1Repository>();
 builder.Services.AddTransient<IClienteRepository, ClienteRepository>();
@@ -99,7 +101,9 @@ builder.Services.AddTransient<INivel3Repository, Nivel3Repository>();
 builder.Services.AddTransient<ICuentaContableRepository, CuentaContableRepository>();
 builder.Services.AddTransient<IMotivosInventarioRepository, MotivosInventarioRepository>();
 builder.Services.AddTransient<IPrecioRepository, PrecioRepository>();
-builder.Services.AddTransient<TablasContext>();
+builder.Services.AddTransient<IBodegaRepository, BodegaRepository>();
+builder.Services.AddTransient<IProductoBodegaRepository, ProductoBodegaRepository>();
+builder.Services.AddTransient<TablasContext>(); 
 
 
 
@@ -120,6 +124,8 @@ builder.Services.AddTransient<Nivel3EventHandler>();
 builder.Services.AddTransient<MotivosInventarioEventHandler>();
 builder.Services.AddTransient<CuentaContableEventHandler>();
 builder.Services.AddTransient<PrecioEventHandler>();
+builder.Services.AddTransient<BodegaEventHandler>();
+builder.Services.AddTransient<ProductoBodegaEventHandler>();
 
 
 
@@ -145,6 +151,8 @@ eventBus.Subscribe<BancoCiaCreateEvent, BancoCiaEventHandler>();
 eventBus.Subscribe<MotivosInventarioCreateEvent, MotivosInventarioEventHandler>();
 eventBus.Subscribe<CuentaContableCreateEvent, CuentaContableEventHandler>();
 eventBus.Subscribe<PrecioCreateEvent, PrecioEventHandler>();
+eventBus.Subscribe<BodegaCreateEvent, BodegaEventHandler>();
+eventBus.Subscribe<ProductoBodegaCreateEvent, ProductoBodegaEventHandler>();
 
 
 // Configure the HTTP request pipeline.

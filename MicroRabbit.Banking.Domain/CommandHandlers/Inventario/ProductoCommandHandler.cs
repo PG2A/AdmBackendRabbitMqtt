@@ -16,7 +16,9 @@ namespace MicroRabbit.Banking.Domain.CommandHandlers.Inventario
 
         public Task<bool> Handle(CreateProductoCommand request, CancellationToken cancellationToken)
         {
-            _eventBus.Publish(new ProductoCreateEvent(
+            for (int i = 0; i < request.TodasSucursales; i++)
+            {
+                _eventBus.Publish(new ProductoCreateEvent(
                 request.Codigo,
                 request.Codigo_Producto,
                 request.Sucursal,
@@ -69,9 +71,10 @@ namespace MicroRabbit.Banking.Domain.CommandHandlers.Inventario
                 request.StockPorBodega,
                 request.Precio,
                 request.StockGeneral,
-                request.StockMatriz, 
+                request.StockMatriz,
                 request.TipoPeticion
                 ));
+            }
             return Task.FromResult(true);
         }
     }

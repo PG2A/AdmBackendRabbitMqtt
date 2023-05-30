@@ -1,6 +1,7 @@
 ﻿using MicroRabbit.Domain.Core.Bus;
 using MicroRabbit.Transfer.Domain.Events.Inventario;
 using MicroRabbit.Transfer.Domain.Interfaces.Inventario;
+using MicroRabbit.Transfer.Domain.Interfaces.Parametros;
 using MicroRabbit.Transfer.Domain.Models.Inventario;
 
 namespace MicroRabbit.Transfer.Domain.EventHandlers.Inventario
@@ -8,10 +9,14 @@ namespace MicroRabbit.Transfer.Domain.EventHandlers.Inventario
     public class ProductoEventHandler : IEventHandler<ProductoCreateEvent>
     {
         private readonly IProductoRepository _productoRepository;
+        private readonly IBodegaRepository _bodegaRepository;
+        private readonly IProductoBodegaRepository _productobodegaRepository;
 
-        public ProductoEventHandler(IProductoRepository productoRepository)
+        public ProductoEventHandler(IProductoRepository productoRepository, IBodegaRepository bodegaRepository, IProductoBodegaRepository productobodegaRepository)
         {
             _productoRepository = productoRepository;
+            _bodegaRepository = bodegaRepository;
+            _productobodegaRepository = productobodegaRepository;
         }
 
         public Task Handle(ProductoCreateEvent @event)
@@ -65,6 +70,20 @@ namespace MicroRabbit.Transfer.Domain.EventHandlers.Inventario
 
                 };
                 _productoRepository.GrabarProducto(grabar);
+
+                var listabodega = _bodegaRepository.ObtenerRegistros();
+
+                foreach (var item in listabodega)
+                {
+                    var grabarpb = new InvProductoBodegaTabla
+                    {
+                        Bodega = item.Codigo,
+                        Producto = @event.Codigo,
+                        Stock = 0,
+                    };
+                    _productobodegaRepository.Grabar(grabarpb);
+                }
+
             }
             if (@event.TipoPeticion == "PUT")
             {
