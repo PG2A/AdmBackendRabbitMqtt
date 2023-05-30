@@ -23,8 +23,11 @@ namespace MicroRabbit.Banking.Domain.CommandHandlers.Parametros
 
         public Task<bool> Handle(CreatePrecioCommand request, CancellationToken cancellationToken)
         {
-            _eventBus.Publish(new PrecioCreateEvent(request.Codigo, request.Sucursal, request.Tipo, request.Precio, request.Producto, request.Fecha_ing, request.Maquina,
+            for (int i = 0; i < request.TodasSucursales; i++)
+            {
+                _eventBus.Publish(new PrecioCreateEvent(request.Codigo, request.Sucursal, request.Tipo, request.Precio, request.Producto, request.Fecha_ing, request.Maquina,
                 request.Usuario, request.PorDes, request.TipoPeticion));
+            }
             return Task.FromResult(true);
         }
     }
