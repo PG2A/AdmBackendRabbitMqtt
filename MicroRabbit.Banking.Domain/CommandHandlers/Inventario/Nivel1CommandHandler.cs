@@ -16,6 +16,15 @@ namespace MicroRabbit.Banking.Domain.CommandHandlers
             _eventBus = eventBus;
             _sucursalRepository = sucursalRepository;
             //      _sucursalRepository = sucursalRepository;
+
+        private readonly IEventBus _eventBus; 
+        private ISucursalRepository _sucursalRepository;
+
+        public Nivel1CommandHandler(IEventBus eventBus, ISucursalRepository sucursalRepository)
+        {
+            _eventBus = eventBus; 
+            _sucursalRepository = sucursalRepository;
+
         }
 
         public Task<bool> Handle(CreateNivel1Command request, CancellationToken cancellationToken)

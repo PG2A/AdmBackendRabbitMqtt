@@ -19,5 +19,6 @@ namespace MicroRabbit.Banking.Domain.Commands.Parametros.Precio
         public int? Usuario { get; set; }
         public float? PorDes { get; set; }
         public string? TipoPeticion { get; set; }
+        public int? TodasSucursales { get; set; }
     }
 }

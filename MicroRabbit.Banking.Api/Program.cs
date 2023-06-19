@@ -32,6 +32,10 @@ using MicroRabbit.Banking.Domain.Commands.Contabilidad.CuentaContable;
 using MicroRabbit.Infra.Bus;
 using MicroRabbit.Infra.IoC;
 using MicroRabbit.Banking.Domain.Commands.Parametros.Precio;
+using MicroRabbit.Banking.Domain.Interfaces;
+using MicroRabbit.Banking.Data.Repository;
+using MicroRabbit.Banking.Data.Context;
+using Microsoft.EntityFrameworkCore;
 
 using MicroRabbit.Banking.Domain.Interfaces;
 using MicroRabbit.Banking.Data.Repository;
@@ -57,6 +61,10 @@ builder.Services.AddDbContext<TablasContext>(options =>
 builder.Services.Configure<RabbitMQSettings>(builder.Configuration.GetSection("RabbitMQSettings"));
 builder.Services.RegisterServices(builder.Configuration);
 
+//builder.Services.AddTransient<TablasContext>();
+
+builder.Services.AddTransient<ISucursalRepository, SucursalRepository>();
+
 
 builder.Services.AddTransient<INivel1Services, Nivel1Services>();
 builder.Services.AddTransient<IClienteServices, ClienteServices>();
@@ -73,6 +81,7 @@ builder.Services.AddTransient<IMotivosInventarioServices, MotivosInventarioServi
 builder.Services.AddTransient<ICuentaContableServices, CuentaContableServices>();
 builder.Services.AddTransient<ISucursalRepository, SucursalRepository>();
 builder.Services.AddTransient<IPrecioServices, PrecioServices>();
+builder.Services.AddTransient<ISucursalServices, SucursalServices>();
 
 builder.Services.AddTransient<IAjusteIngresoServices, AjusteIngresoServices>();
 
@@ -93,9 +102,6 @@ builder.Services.AddTransient<IRequestHandler<CreateMotivosInventarioCommand, bo
 builder.Services.AddTransient<IRequestHandler<CreateCuentaContableCommand, bool>, CuentaContableCommandHandler>();
 builder.Services.AddTransient<IRequestHandler<CreatePrecioCommand, bool>, PrecioCommandHandler>();
 builder.Services.AddTransient<IRequestHandler<CreateAjusteIngresoCommand, bool>, AjusteIngresoCommandHandler>();
-
-
-
 
 
 

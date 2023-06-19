@@ -93,6 +93,8 @@ builder.Services.AddTransient<IEventHandler<Nivel2CreateEvent>, Nivel2EventHandl
 builder.Services.AddTransient<IEventHandler<Nivel3CreateEvent>, Nivel3EventHandler>();
 builder.Services.AddTransient<IEventHandler<CuentaContableCreateEvent>, CuentaContableEventHandler>();
 builder.Services.AddTransient<IEventHandler<PrecioCreateEvent>, PrecioEventHandler>();
+builder.Services.AddTransient<IEventHandler<BodegaCreateEvent>, BodegaEventHandler>();
+builder.Services.AddTransient<IEventHandler<ProductoBodegaCreateEvent>, ProductoBodegaEventHandler>();
 
 builder.Services.AddTransient<INivelRepository, Nivel1Repository>();
 builder.Services.AddTransient<IClienteRepository, ClienteRepository>();
@@ -114,6 +116,10 @@ builder.Services.AddTransient<IPrecioRepository, PrecioRepository>();
 builder.Services.AddTransient<TablasContext>();
 builder.Services.AddTransient<TablasSinKeyDbContext>();
 
+
+builder.Services.AddTransient<IBodegaRepository, BodegaRepository>();
+builder.Services.AddTransient<IProductoBodegaRepository, ProductoBodegaRepository>();
+builder.Services.AddTransient<TablasContext>(); 
 
 
 
@@ -138,6 +144,9 @@ builder.Services.AddTransient<TranferenciaBodegaEventHandler>();
 builder.Services.AddTransient<AjusteIngresoEventHandler>();
 
 
+
+builder.Services.AddTransient<BodegaEventHandler>();
+builder.Services.AddTransient<ProductoBodegaEventHandler>();
 
 
 
@@ -167,6 +176,9 @@ eventBus.Subscribe<TransferenciaBodegaCabCreateEvent, TranferenciaBodegaEventHan
 eventBus.Subscribe<AjusteIngresoCreateEvent, AjusteIngresoEventHandler>();
 
 
+
+eventBus.Subscribe<BodegaCreateEvent, BodegaEventHandler>();
+eventBus.Subscribe<ProductoBodegaCreateEvent, ProductoBodegaEventHandler>();
 
 
 // Configure the HTTP request pipeline.

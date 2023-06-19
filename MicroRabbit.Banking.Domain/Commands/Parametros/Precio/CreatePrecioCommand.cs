@@ -8,7 +8,7 @@ namespace MicroRabbit.Banking.Domain.Commands.Parametros.Precio
 {
     public class CreatePrecioCommand : PrecioCommand
     {
-        public CreatePrecioCommand(int codigo, int? sucursal, int? tipo, float? precio, int? producto, DateTime? fecha_ing, string? maquina, int? usuario, float? porDes, string? tipoPeticion)
+        public CreatePrecioCommand(int codigo, int? sucursal, int? tipo, float? precio, int? producto, DateTime? fecha_ing, string? maquina, int? usuario, float? porDes, string? tipoPeticion, int? todasSucursales)
         {
             Codigo = codigo;
             Sucursal = sucursal;
@@ -20,6 +20,7 @@ namespace MicroRabbit.Banking.Domain.Commands.Parametros.Precio
             Usuario = usuario;
             PorDes = porDes;
             TipoPeticion = tipoPeticion;
+            TodasSucursales = todasSucursales;
         }
     }
 }
