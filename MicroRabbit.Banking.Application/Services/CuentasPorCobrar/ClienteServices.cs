@@ -1,14 +1,9 @@
-﻿using MediatR;
-using MicroRabbit.Banking.Application.Interfaces.CuentasPorCobrar;
+﻿using MicroRabbit.Banking.Application.Interfaces.CuentasPorCobrar;
 using MicroRabbit.Banking.Application.Models.CuentasPorCobrar;
 using MicroRabbit.Banking.Domain.Commands.CuentasPorCobrar.Cliente;
 using MicroRabbit.Banking.Domain.Interfaces;
 using MicroRabbit.Domain.Core.Bus;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace MicroRabbit.Banking.Application.Services.CuentasPorCobrar
 {
@@ -16,10 +11,16 @@ namespace MicroRabbit.Banking.Application.Services.CuentasPorCobrar
     {
         private readonly IEventBus _eventBus;
 
+
+        ////}
+
+
         private ISucursalRepository _sucursalRepository; 
+
         public ClienteServices(IEventBus eventBus)
         {
             _eventBus = eventBus;
+  
         }
         public ClienteServices(IEventBus eventBus, ISucursalRepository sucursalRepository)
         {

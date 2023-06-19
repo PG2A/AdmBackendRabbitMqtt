@@ -37,6 +37,12 @@ using MicroRabbit.Banking.Data.Repository;
 using MicroRabbit.Banking.Data.Context;
 using Microsoft.EntityFrameworkCore;
 
+using MicroRabbit.Banking.Domain.Interfaces;
+using MicroRabbit.Banking.Data.Repository;
+using MicroRabbit.Banking.Data.Context;
+using Microsoft.EntityFrameworkCore;
+using MicroRabbit.Banking.Domain.Commands.Inventario.AjusteIngreso;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -73,8 +79,11 @@ builder.Services.AddTransient<IPersonaServices, PersonaServices>();
 builder.Services.AddTransient<IBancoCiaServices, BancoCiaServices>();
 builder.Services.AddTransient<IMotivosInventarioServices, MotivosInventarioServices>();
 builder.Services.AddTransient<ICuentaContableServices, CuentaContableServices>();
+builder.Services.AddTransient<ISucursalRepository, SucursalRepository>();
 builder.Services.AddTransient<IPrecioServices, PrecioServices>();
 builder.Services.AddTransient<ISucursalServices, SucursalServices>();
+
+builder.Services.AddTransient<IAjusteIngresoServices, AjusteIngresoServices>();
 
 
 
@@ -92,6 +101,8 @@ builder.Services.AddTransient<IRequestHandler<CreateBancoCiaCommand, bool>, Banc
 builder.Services.AddTransient<IRequestHandler<CreateMotivosInventarioCommand, bool>, MotivosInventarioCommandHandler>();
 builder.Services.AddTransient<IRequestHandler<CreateCuentaContableCommand, bool>, CuentaContableCommandHandler>();
 builder.Services.AddTransient<IRequestHandler<CreatePrecioCommand, bool>, PrecioCommandHandler>();
+builder.Services.AddTransient<IRequestHandler<CreateAjusteIngresoCommand, bool>, AjusteIngresoCommandHandler>();
+
 
 
 

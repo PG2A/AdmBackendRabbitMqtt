@@ -70,6 +70,10 @@ builder.Services.AddTransient<IBancoCiaServices, BancoCiaServices>();
 builder.Services.AddTransient<IMotivosInventarioServices, MotivosInventarioServices>();
 builder.Services.AddTransient<INivel2Services, Nivel2Services>();
 builder.Services.AddTransient<INivel3Services, NIvel3Services>();
+builder.Services.AddTransient<ITransferenciaBodegaServices, TransferenciaBodegaServices>();
+builder.Services.AddTransient<IAjusteIngresoServices, AjusteIngresoServices>();
+
+
 builder.Services.AddTransient<ICuentaContableServices, CuentaContableServices>();
 builder.Services.AddTransient<IPrecioServices, PrecioServices>();
 builder.Services.AddTransient<IEventHandler<Nivel1CreateEvent>, Nivel1EventHandler>();
@@ -80,6 +84,10 @@ builder.Services.AddTransient<IEventHandler<CamionCreateEvent>, CamionEventHandl
 builder.Services.AddTransient<IEventHandler<ProveedorCreateEvent>, ProveedorEventHandler>();
 builder.Services.AddTransient<IEventHandler<BancoCiaCreateEvent>, BancoCiaEventHandler>();
 builder.Services.AddTransient<IEventHandler<MotivosInventarioCreateEvent>, MotivosInventarioEventHandler>();
+builder.Services.AddTransient<IEventHandler<TransferenciaBodegaCabCreateEvent>, TranferenciaBodegaEventHandler>();
+builder.Services.AddTransient<IEventHandler<AjusteIngresoCreateEvent>, AjusteIngresoEventHandler>();
+
+
 builder.Services.AddTransient<Nivel1DbContext>();
 builder.Services.AddTransient<IEventHandler<Nivel2CreateEvent>, Nivel2EventHandler>();
 builder.Services.AddTransient<IEventHandler<Nivel3CreateEvent>, Nivel3EventHandler>();
@@ -98,9 +106,17 @@ builder.Services.AddTransient<IPersonaRepository, PersonaRepository>();
 builder.Services.AddTransient<IBancoCiaRepository, BancoCiaRepository>();
 builder.Services.AddTransient<INivel2Repository, Nivel2Repository>();
 builder.Services.AddTransient<INivel3Repository, Nivel3Repository>();
+builder.Services.AddTransient<ITranfrenciaBodegaRepository, TranferenciaBodegaRepository>();
+builder.Services.AddTransient<IAjusteIngresoRepository, AjusteIngresoRepository>();
+
+
 builder.Services.AddTransient<ICuentaContableRepository, CuentaContableRepository>();
 builder.Services.AddTransient<IMotivosInventarioRepository, MotivosInventarioRepository>();
 builder.Services.AddTransient<IPrecioRepository, PrecioRepository>();
+builder.Services.AddTransient<TablasContext>();
+builder.Services.AddTransient<TablasSinKeyDbContext>();
+
+
 builder.Services.AddTransient<IBodegaRepository, BodegaRepository>();
 builder.Services.AddTransient<IProductoBodegaRepository, ProductoBodegaRepository>();
 builder.Services.AddTransient<TablasContext>(); 
@@ -124,6 +140,11 @@ builder.Services.AddTransient<Nivel3EventHandler>();
 builder.Services.AddTransient<MotivosInventarioEventHandler>();
 builder.Services.AddTransient<CuentaContableEventHandler>();
 builder.Services.AddTransient<PrecioEventHandler>();
+builder.Services.AddTransient<TranferenciaBodegaEventHandler>();
+builder.Services.AddTransient<AjusteIngresoEventHandler>();
+
+
+
 builder.Services.AddTransient<BodegaEventHandler>();
 builder.Services.AddTransient<ProductoBodegaEventHandler>();
 
@@ -151,6 +172,11 @@ eventBus.Subscribe<BancoCiaCreateEvent, BancoCiaEventHandler>();
 eventBus.Subscribe<MotivosInventarioCreateEvent, MotivosInventarioEventHandler>();
 eventBus.Subscribe<CuentaContableCreateEvent, CuentaContableEventHandler>();
 eventBus.Subscribe<PrecioCreateEvent, PrecioEventHandler>();
+eventBus.Subscribe<TransferenciaBodegaCabCreateEvent, TranferenciaBodegaEventHandler>();
+eventBus.Subscribe<AjusteIngresoCreateEvent, AjusteIngresoEventHandler>();
+
+
+
 eventBus.Subscribe<BodegaCreateEvent, BodegaEventHandler>();
 eventBus.Subscribe<ProductoBodegaCreateEvent, ProductoBodegaEventHandler>();
 

@@ -17,6 +17,13 @@ namespace MicroRabbit.Banking.Data.Repository
 
         public List<SucursalModel> Listar()
         {
+
+            dynamic lista = _tablas.ADM_SUCURSAL.ToList();
+            return lista;
+        }   
+
+     
+
             var lista = new List<SucursalModel>();
             var lista2 = _tablas.ObtenerTodasLasSucursales();
             foreach (var item in lista2)
