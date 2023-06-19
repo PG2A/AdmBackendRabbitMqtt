@@ -31,11 +31,13 @@ using MicroRabbit.Banking.Domain.Commands.Parametros.Persona;
 using MicroRabbit.Banking.Domain.Commands.Contabilidad.CuentaContable;
 using MicroRabbit.Infra.Bus;
 using MicroRabbit.Infra.IoC;
-using MicroRabbit.Banking.Data.Context;
-using Microsoft.EntityFrameworkCore;
+using MicroRabbit.Banking.Domain.Commands.Parametros.Precio;
 
 using MicroRabbit.Banking.Domain.Interfaces;
 using MicroRabbit.Banking.Data.Repository;
+using MicroRabbit.Banking.Data.Context;
+using Microsoft.EntityFrameworkCore;
+using MicroRabbit.Banking.Domain.Commands.Inventario.AjusteIngreso;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -70,7 +72,9 @@ builder.Services.AddTransient<IBancoCiaServices, BancoCiaServices>();
 builder.Services.AddTransient<IMotivosInventarioServices, MotivosInventarioServices>();
 builder.Services.AddTransient<ICuentaContableServices, CuentaContableServices>();
 builder.Services.AddTransient<ISucursalRepository, SucursalRepository>();
+builder.Services.AddTransient<IPrecioServices, PrecioServices>();
 
+builder.Services.AddTransient<IAjusteIngresoServices, AjusteIngresoServices>();
 
 
 
@@ -87,6 +91,9 @@ builder.Services.AddTransient<IRequestHandler<CreatePersonaCommand, bool>, Perso
 builder.Services.AddTransient<IRequestHandler<CreateBancoCiaCommand, bool>, BancoCiaCommandHandler>();
 builder.Services.AddTransient<IRequestHandler<CreateMotivosInventarioCommand, bool>, MotivosInventarioCommandHandler>();
 builder.Services.AddTransient<IRequestHandler<CreateCuentaContableCommand, bool>, CuentaContableCommandHandler>();
+builder.Services.AddTransient<IRequestHandler<CreatePrecioCommand, bool>, PrecioCommandHandler>();
+builder.Services.AddTransient<IRequestHandler<CreateAjusteIngresoCommand, bool>, AjusteIngresoCommandHandler>();
+
 
 
 
