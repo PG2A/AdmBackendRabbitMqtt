@@ -59,5 +59,6 @@ namespace MicroRabbit.Banking.Domain.Commands.Inventario.Producto
         public double? StockGeneral { get; set; }
         public float? StockMatriz { get; set; }
         public string TipoPeticion { get; set; }
+        public int? TodasSucursales { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using MicroRabbit.Banking.Application.Interfaces.Inventario;
 using MicroRabbit.Banking.Application.Models.Inventario;
 using MicroRabbit.Banking.Domain.Commands.Inventario.Producto;
+using MicroRabbit.Banking.Domain.Interfaces;
 using MicroRabbit.Domain.Core.Bus;
 
 namespace MicroRabbit.Banking.Application.Services.Inventario
@@ -9,13 +10,20 @@ namespace MicroRabbit.Banking.Application.Services.Inventario
     {
         private readonly IEventBus _eventBus;
 
+        private ISucursalRepository _sucursalRepository;
         public ProductoServices(IEventBus eventBus)
         {
             _eventBus = eventBus;
         }
 
+        public ProductoServices(IEventBus eventBus, ISucursalRepository sucursalRepository) : this(eventBus)
+        {
+            _sucursalRepository = sucursalRepository;
+        }
+
         public void Enviar(ProductoModel producto)
         {
+            var todas = _sucursalRepository == null ? 0 : _sucursalRepository.Listar().Count();
             var createProductoCommand = new CreateProductoCommand(
                 producto.Codigo,
                 producto.Codigo_Producto,
@@ -70,8 +78,9 @@ namespace MicroRabbit.Banking.Application.Services.Inventario
                 producto.Precio,
                 producto.StockGeneral,
                 producto.StockMatriz,
-                producto.TipoPeticion
-                );
+                producto.TipoPeticion,
+                todasSucursales: todas
+                ) ;
             _eventBus.SendCommand(createProductoCommand);
         }
     }

@@ -7,5 +7,6 @@ namespace MicroRabbit.Transfer.Domain.Interfaces.CuentasPorCobrar
     {
         void GrabarTabla(ClientesTabla clienteTabla);
         void EditarTabla(ClientesTabla clienteTabla);
+        ClientesTabla Obtener(string codigo); 
     }
 }
